@@ -1,0 +1,36 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+h1{
+    margin: 5px;
+}
+
+#application-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+#sidebar {
+    flex: 1;
+    border-right: solid black 1px;
+    min-width: 180px;
+    height: 100%;
+}
+#sidebar-header{
+    border-bottom: 1px solid black;
+    padding-left: 15px;
+}
+
+#main-content {
+    flex: 5;
+    padding: 15px;
+}
+
+#filters{
+    margin-top: 30px;
+    padding:15px;
+    background-color: #fbfbfb;
+}
