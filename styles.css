@@ -1,10 +1,19 @@
 html, body {
     height: 100%;
     margin: 0;
+    font-family: 'Poppins-Regular', 'sans-serif';
+}
+
+input{
+    font-family: 'Poppins-SemiBold', 'sans-serif';
 }
 
 h1{
     margin: 5px;
+    font-family: 'Poppins-SemiBold', 'sans-serif';
+}
+h3{
+    font-family: 'Poppins-SemiBold', 'sans-serif';
 }
 
 #application-wrapper {
@@ -19,6 +28,12 @@ h1{
     min-width: 180px;
     height: 100%;
 }
+#sidebar li{
+    text-decoration:none;
+    list-style:none;
+    margin-top:5px;
+}
+
 #sidebar-header{
     border-bottom: 1px solid black;
     padding-left: 15px;
@@ -30,7 +45,44 @@ h1{
 }
 
 #filters{
-    margin-top: 30px;
-    padding:15px;
+    display:flex;
+    flex-direction:row;
+}
+#filters-container{
+    display:flex;
+    flex-direction:column;
     background-color: #fbfbfb;
+    padding:15px;
+    margin-top: 30px;
+}
+
+#filters label{
+    margin-bottom:4px;
+}
+.filter {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* FONT IMPORTS */
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins-Light';
+    src: url('/fonts/Poppins/Poppins-Light.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins-SemiBold';
+    src: url('/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }

@@ -8,33 +8,45 @@
 </head>
 <body>
     <div id="application-wrapper">
-    <div id="sidebar">
-        <div id="sidebar-header">
-            <h3>Historic Travels</h3>
+        <div id="sidebar">
+            <div id="sidebar-header">
+                <h3>Historic Travels</h3>
+            </div>
+                <ul id="sidebar-links">
+                    <li><a>Home</a></li>
+                    <li><a>Bookings</a></li>
+                    <li><a>Account</a></li>
+                </ul>
         </div>
-            <ul id="sidebar-links">
-                <li><a>Dashboard</a></li>
-                <li><a>Bookings</a></li>
-                <li><a>Account</a></li>
-            </ul>
-    </div>
-    <div id="main-content">
-        <h1>Historic WW2 Locations</h1>
-        <div id="filters">
-            <h3>Filters</h3>
-            <label>Country</label>
-            <select id="countryOptions" name="countryOptions"></select>
-            <label>Topic</label>
-            <select id="topicOptions" name="topicOptions"></select>
-            <label>Sort By</label>
-            <select id="sortOptions" name="sortOptions"></select>
-            <label>Search</label>
-            <input placeholder="Search locations...">
-        </div>
-        <div id="displayedLocations">
+        <div id="main-content">
+            <h1>Historic WW2 Locations</h1>
+            <div id="filters-container">
+                <h3>Filters</h3>
+                    <div id="filters">
+                        <div class="filter">
+                            <label>Country</label>
+                            <select id="countryOptions" name="countryOptions"></select>
+                        </div>
+                        <div class="filter">
+                            <label>Topic</label>
+                            <select id="topicOptions" name="topicOptions"></select>
+                        </div>
+                        <div class="filter">
+                            <label>Sort By</label>
+                            <select id="sortOptions" name="sortOptions"></select>
+                        </div>
+                        <div class="filter">
+                            <label>Search</label>
+                            <input placeholder="Search locations...">
+                        </div>
+                    </div>
+                </div>
+            <div id="displayedLocations">
+
+            </div>
 
         </div>
-    </div>
+
     </div>
 </body>
 </html>
