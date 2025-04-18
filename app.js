@@ -1,7 +1,9 @@
 import locationData from './location-data.js';
 
+
 const displayedLocations = document.getElementById("displayedLocations");
 
+// DISPLAY THE LOCATIONS
 document.addEventListener("DOMContentLoaded", function(){
     if(displayedLocations){
         locationData.locations.forEach(item => {
@@ -20,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function(){
             <p>Rating:${item.rating}</p>  
             </div>
             </div>
+            <button class="book-button">Book</button>
             </div>
             `;
             displayedLocations.appendChild(locationDiv);

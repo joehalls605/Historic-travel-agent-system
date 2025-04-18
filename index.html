@@ -29,20 +29,40 @@
                     <div id="filters">
                         <div class="filter">
                             <label>Country</label>
-                            <select id="countryOptions" name="countryOptions"></select>
+                            <select id="countryOptions" name="countryOptions">
+                                <option value="France">France</option>
+                                <option value="Poland">Poland</option>
+                                <option value="United States">United States</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="Netherlands">Netherlands</option>
+                                <option value="Japan">Japan</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Belgium">Belgium</option>
+                            </select>
                         </div>
                         <div class="filter">
                             <label>Topic</label>
-                            <select id="topicOptions" name="topicOptions"></select>
+                            <select id="topicOptions" name="topicOptions">
+                                <option value="Battlefield">Battlefield</option>
+                                <option value="Memorial">Memorial</option>
+                                <option value="Museum">Museum</option>
+                                <option value="Historical">Historical</option>
+                            </select>
                         </div>
                         <div class="filter">
                             <label>Sort By</label>
-                            <select id="sortOptions" name="sortOptions"></select>
+                            <select id="sortOptions" name="sortOptions">
+                                <option value="priceLowToHigh">Price (Low to High)</option>
+                                <option value="priceHighToLow">Price (High to Low)</option>
+                                <option value="ratingHighToLow">Rating (High to Low)</option>
+                                <option value="ratingLowToHigh">Rating (Low to High)</option>
+                            </select>
                         </div>
                         <div class="filter">
                             <label>Search</label>
                             <input placeholder="Search locations...">
                         </div>
+                        <button class="filterButton">Apply Filters</button>
                     </div>
                 </div>
             <div id="displayedLocations">
