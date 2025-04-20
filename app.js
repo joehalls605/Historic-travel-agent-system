@@ -18,7 +18,9 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     const locationsDisplayed = locationsDisplayedTotal();
     console.log(locationsDisplayed);
-    displayedLocationsValue.textContent = `${locationsDisplayed} locations`
+    if(displayedLocationsValue){
+        displayedLocationsValue.textContent = `${locationsDisplayed} locations`
+    }
 })
 
 function displayLocations(locationsArray){
@@ -48,7 +50,9 @@ function displayLocations(locationsArray){
 }
 
 const applyFiltersButton = document.getElementById("filterButton");
-applyFiltersButton.addEventListener("click", applyFilters);
+if(applyFiltersButton){
+    applyFiltersButton.addEventListener("click", applyFilters);
+}
 
 function applyFilters(){
     const filteredLocations = filterLocations();
@@ -75,7 +79,9 @@ function filterLocations(){
     });
 }
 
-searchButton.addEventListener("click", search);
+if(searchButton){
+    searchButton.addEventListener("click", search);
+}
 
 function search(){
     const searchTerm = searchInput.value;
@@ -90,7 +96,9 @@ function search(){
     displayLocations(searchResults);
 }
 
-sortOptions.addEventListener("change", sort);
+if(sortOptions){
+    sortOptions.addEventListener("change", sort);
+}
 
 function sort(){
     const selectedSortValue = sortOptions.value;

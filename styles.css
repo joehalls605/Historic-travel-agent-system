@@ -145,15 +145,12 @@ input{
 }
 
 
-
 #displayHeader{
     display:flex;
     flex-direction:row;
     justify-content:space-between;
     align-items:center;
 }
-
-
 
 
 #displayedLocations{
@@ -195,6 +192,16 @@ input{
     color:white;
     height:40px;
     border-radius:3px;
+    font-family: 'Poppins-SemiBold', 'sans-serif';
+}
+
+#searchInput {
+    height: 40px;
+}
+#searchButton{
+    height:40px;
+    background-color:black;
+    color:white;
     font-family: 'Poppins-SemiBold', 'sans-serif';
 }
 
