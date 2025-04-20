@@ -143,6 +143,19 @@ input{
     margin-left: 10px;
     margin-right: 10px;
 }
+
+
+
+#displayHeader{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+
+
 #displayedLocations{
     display:grid;
     grid-template-columns: repeat(4, 1fr);

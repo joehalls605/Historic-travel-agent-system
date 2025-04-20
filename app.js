@@ -3,6 +3,10 @@ import locationData from './location-data.js';
 
 const displayedLocations = document.getElementById("displayedLocations");
 const countryOptions = document.getElementById("countryOptions");
+const topicOptions = document.getElementById("topicOptions");
+const ratingOptions = document.getElementById("ratingOptions");
+const searchInput = document.getElementById("searchInput");
+const searchButton = document.getElementById("searchButton");
 
 document.addEventListener("DOMContentLoaded", function(){
     if(displayedLocations){
@@ -40,17 +44,39 @@ const applyFiltersButton = document.getElementById("filterButton");
 applyFiltersButton.addEventListener("click", applyFilters);
 
 function applyFilters(){
-    const filteredLocations = filterDisplayedLocations();
+    const filteredLocations = filterLocations();
     displayLocations(filteredLocations);
 }
 
-function filterDisplayedLocations(){
+function filterLocations(){
     const selectedCountry = countryOptions.value;
+    const selectedTopic = topicOptions.value;
+    const selectedRating = parseFloat(ratingOptions.value); // Convert rating to a number
 
     return locationData.locations.filter(function(item){
-        if(item.country !== selectedCountry){ // removes it from the new array
+        if(selectedCountry !== "All" && selectedCountry !== item.country){ // removes it from the new array
+            return false;
+        }
+        if(selectedTopic !== "All" && selectedTopic !== item.topic){
+            return false;
+        }
+        if(selectedRating > 0 && item.rating < selectedRating){
             return false;
         }
         return true;
     });
+}
+
+searchButton.addEventListener("click", search);
+
+function search(){
+    const searchTerm = searchInput.value;
+    const searchResults = locationData.locations.filter(function(item){
+        console.log(searchTerm);
+        return(
+            item.name.includes(searchTerm) ||
+            item.country.includes(searchTerm)
+        );
+    });
+    displayLocations(searchResults);
 }
