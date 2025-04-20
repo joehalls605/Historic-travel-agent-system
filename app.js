@@ -1,5 +1,7 @@
 import locationData from './location-data.js';
 
+// Global variable to track the current displayed list
+let currentDisplayedLocations = locationData.locations.slice();
 
 const displayedLocations = document.getElementById("displayedLocations");
 const countryOptions = document.getElementById("countryOptions");
@@ -7,11 +9,16 @@ const topicOptions = document.getElementById("topicOptions");
 const ratingOptions = document.getElementById("ratingOptions");
 const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
+const sortOptions = document.getElementById("sortOptions");
+const displayedLocationsValue = document.getElementById("displayedLocationsValue");
 
 document.addEventListener("DOMContentLoaded", function(){
     if(displayedLocations){
         displayLocations(locationData.locations);
     }
+    const locationsDisplayed = locationsDisplayedTotal();
+    console.log(locationsDisplayed);
+    displayedLocationsValue.textContent = `${locationsDisplayed} locations`
 })
 
 function displayLocations(locationsArray){
@@ -45,6 +52,7 @@ applyFiltersButton.addEventListener("click", applyFilters);
 
 function applyFilters(){
     const filteredLocations = filterLocations();
+    currentDisplayedLocations = filteredLocations;
     displayLocations(filteredLocations);
 }
 
@@ -78,5 +86,31 @@ function search(){
             item.country.includes(searchTerm)
         );
     });
+    currentDisplayedLocations = searchResults;
     displayLocations(searchResults);
+}
+
+sortOptions.addEventListener("change", sort);
+
+function sort(){
+    const selectedSortValue = sortOptions.value;
+    let sortedLocations = [...currentDisplayedLocations];
+
+    if(selectedSortValue === "price-low"){
+        sortedLocations.sort((a,b) => a.price - b.price);
+    }
+    else if(selectedSortValue === "price-high"){
+        sortedLocations.sort((a,b) => b.price - a.price);
+    }
+    else if(selectedSortValue === "rating-low"){
+        sortedLocations.sort((a,b) => a.rating - b.rating);
+    }
+    else if(selectedSortValue === "rating-high"){
+        sortedLocations.sort((a,b) => b.rating - a.rating);
+    }
+    displayLocations(sortedLocations);
+}
+
+function locationsDisplayedTotal(){
+    return currentDisplayedLocations.length;
 }
