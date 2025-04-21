@@ -101,23 +101,26 @@ li a:hover{
     height:30px;
 }
 #filterButton{
+    align-self: flex-end;
+    height: 40px;
     font-family: 'Poppins-SemiBold', 'sans-serif';
     background-color: #000000;
-    color:white;
-    border-radius:4px;
-    height:65px;
-    margin:0px;
+    color: white;
+    border-radius: 4px;
     transition: background-color 0.3s ease;
+    flex: 0.5;
 }
 .filterButton:hover{
     font-family: 'Poppins-SemiBold', 'sans-serif';
     background-color: #0b0b0b;
     color:white;
     border-radius:4px;
-    height:65px;
-    margin:0px;
+    height:40px;
     cursor: pointer;
     box-shadow: 0 1px 1px rgba(0,0,0.1);
+}
+.filter select{
+    height:40px;
 }
 
 select{
@@ -127,6 +130,7 @@ select{
     font-family: 'Poppins-Light', 'sans-serif';
 
 }
+
 option{
     font-family: 'Poppins-Light', 'sans-serif';
 }
@@ -140,9 +144,19 @@ input{
 .filter {
     display: flex;
     flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    flex: 0.9;
+}
+.sort-filter{
+    display: flex;
+    flex-direction: row;
     flex:1;
     margin-left: 10px;
     margin-right: 10px;
+}
+.sort-filter select{
+    margin-left:15px;
 }
 
 
@@ -150,7 +164,25 @@ input{
     display:flex;
     flex-direction:row;
     justify-content:space-between;
-    align-items:center;
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:40px;
+    margin-bottom:35px;
+}
+#displayHeader label{
+    font-family: 'Poppins-Semibold', 'sans-serif';
+}
+
+#displayedLocationsValue{
+    margin:0px;
+}
+#displayedLocationsValue i{
+    margin-right: 10px;
+}
+
+
+#sortOptions{
+    padding:5px;
 }
 
 
@@ -158,7 +190,9 @@ input{
     display:grid;
     grid-template-columns: repeat(4, 1fr);
     gap:20px;
-    margin:30px;
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:15px;
 }
 
 .location-card{

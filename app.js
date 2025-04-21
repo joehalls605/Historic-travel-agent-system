@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const locationsDisplayed = locationsDisplayedTotal();
     console.log(locationsDisplayed);
     if(displayedLocationsValue){
-        displayedLocationsValue.textContent = `${locationsDisplayed} locations`
+        displayedLocationsValue.innerHTML = `<i class="fas fa-map-pin"></i> ${locationsDisplayed} locations`
     }
 })
 
