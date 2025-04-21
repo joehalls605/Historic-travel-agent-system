@@ -29,22 +29,24 @@ function displayLocations(locationsArray){
     locationsArray.forEach(item => {
         const locationDiv = document.createElement("div");
         locationDiv.innerHTML = `
-        <div class="location-card">
-        <img class="location-card-image" alt="image" src="${item.image}">
-        <div class="card-content">
-        <h3>${item.name}</h3>        
-        <p>${item.country}</p>
-        <p>${item.description}</p>   
-        <p>${item.significance}</p>
-        <p>${item.details}</p>
-        <div class="card-footer">
-        <p>£${item.price}</p>   
-        <p>Rating:${renderStars(item.rating)} (${item.rating})</p>  
-        </div>
-        </div>
-        <button class="book-button">Book</button>
-        </div>
-        `;
+              <div class="location-card">
+                <img class="location-card-image" alt="image" src="${item.image}">
+                <div class="card-content">
+                  <div class="card-text-wrapper">
+                    <h3>${item.name}</h3>        
+                    <div class="card-details">
+                      <p class="card-country">${item.country}</p>
+                      <p class="card-description">${item.description}</p>   
+                      <p>${item.significance}</p>
+                      <p>${item.details}</p>
+                    </div>
+                  </div>
+                  <p class="card-rating">Rating: ${item.rating}</p>  
+                  <p class="card-price">£${item.price}</p>
+                </div>
+                  <button class="book-button">Book</button>
+              </div>
+            `;
         displayedLocations.appendChild(locationDiv);
     });
 }
@@ -121,28 +123,6 @@ function sort(){
 
 function locationsDisplayedTotal(){
     return currentDisplayedLocations.length;
-}
-
-function renderStars(rating) {
-    const fullStars = Math.floor(rating); // example: 4
-    const halfStar = rating % 1 >= 0.25 && rating % 1 < 0.75; // check if the number after the decimal, is close to half star
-    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0); // Subtract full stars from the 5 max stars total,
-
-    let starsHtml = '';
-
-    for (let i = 0; i < fullStars; i++) {
-        starsHtml += '<i class="fas fa-star" style="color: gold;"></i>';
-    }
-
-    if (halfStar) {
-        starsHtml += '<i class="fas fa-star-half-alt" style="color: gold;"></i>';
-    }
-
-    for (let i = 0; i < emptyStars; i++) {
-        starsHtml += '<i class="far fa-star" style="color: gold;"></i>';
-    }
-
-    return starsHtml;
 }
 
 
