@@ -102,7 +102,7 @@ const locations = {
       "rating": 4.7,
       "year": 1944,
       "significance": "The largest single military effort by any European resistance movement during WWII",
-      "details": "The Warsaw Uprising Museum is a museum in Warsaw, Poland, dedicated to the Warsaw Uprising of 1944..."
+      "details": "The Warsaw Uprising Museum is dedicated to the Warsaw Uprising of 1944..."
     },
     {
       "id": 9,

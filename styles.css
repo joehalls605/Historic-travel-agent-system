@@ -218,9 +218,18 @@ input{
     flex: 1;
     padding: 20px;
 }
+.card-content p{
+
+}
+
 .card-footer{
     margin-top: auto;
+    margin-bottom:0;
 }
+.card-footer p{
+    margin:3px;
+}
+
 .book-button{
     width:100%;
     background-color:black;
