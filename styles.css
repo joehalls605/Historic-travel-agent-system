@@ -9,8 +9,8 @@ input{
 }
 
 h1{
-    margin: 10px;
     font-family: 'Poppins-SemiBold', 'sans-serif';
+    margin:0;
 }
 h3{
     font-family: 'Poppins-SemiBold', 'sans-serif';
@@ -81,6 +81,7 @@ li a:hover{
     justify-content:space-between;
     margin-right:30px;
     margin-left:15px;
+    margin-top:20px;
 }
 
 #filters{
@@ -195,14 +196,46 @@ input{
     font-family: 'Poppins-SemiBold', 'sans-serif';
 }
 
-#searchInput {
-    height: 40px;
+#search{
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
 }
+.search-box{
+    display:flex;
+    flex-direction:row;
+    margin-top:5px;
+}
+#searchInput,
 #searchButton{
-    height:40px;
-    background-color:black;
-    color:white;
+    height: 40px;
+    font-family: 'Poppins-Light', 'sans-serif';
+    box-sizing: border-box;
+}
+
+#searchInput {
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    padding:0 10px;
+    flex: 1;
+}
+#searchInput:focus{
+    border: #bbbbbb 1px solid;
+    border-right: none;
+    border-bottom: 1px solid #bbbbbb;
+    border-left: 1px solid #bbbbbb;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+#searchButton {
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    background-color: black;
+    color: white;
     font-family: 'Poppins-SemiBold', 'sans-serif';
+    padding: 0 15px;
+    cursor: pointer;
 }
 
 /* FONT IMPORTS */
