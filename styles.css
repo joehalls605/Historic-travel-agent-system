@@ -358,9 +358,10 @@ input{
     flex-direction:column;
     margin:20px;
     height:400px;
-    border: #bbbbbb 1px solid;
+    border: #dadada 1px solid;
+    border-radius:5px;
     padding:20px;
-    border-radius:4px;
+    box-shadow: 4px 4px 30px 0 rgba(236, 236, 236, 0.25);
 }
 .profile-details{
     display:flex;
@@ -401,11 +402,13 @@ input{
 #bookings-this-month{
     display:flex;
     flex-direction:column;
-    border: #bbbbbb 1px solid;
+    border: #dadada 1px solid;
+    border-radius:5px;
     margin-right:20px;
     flex:1;
     padding:20px;
-    border-radius:4px;
+    box-shadow: 4px 4px 30px 0 rgba(236, 236, 236, 0.25);
+
 }
 #bookings-this-month p{
     margin:3px;
@@ -415,10 +418,12 @@ input{
 #total-bookings{
     display:flex;
     flex-direction:column;
-    border: #bbbbbb 1px solid;
+    border: #dadada 1px solid;
+    border-radius:5px;
     flex:1;
     padding:20px;
-    border-radius:4px;
+    box-shadow: 4px 4px 30px 0 rgba(236, 236, 236, 0.25);
+
 }
 #total-bookings p{
     margin:3px;
@@ -429,19 +434,24 @@ input{
     display:flex;
     flex-direction:column;
     margin-top:20px;
-    border: #bbbbbb 1px solid;
+    border: #dadada 1px solid;
+    border-radius:5px;
     height:100%;
     padding:20px;
+    box-shadow: 4px 4px 30px 0 rgba(236, 236, 236, 0.25);
 }
 
 #agency-information{
     width:100%;
     display:flex;
     flex-direction:column;
-    margin:20px;
-    border: #bbbbbb 1px solid;
-    border-radius:4px;
+    margin-top:10px;
+    margin-left:20px;
+    margin-right:20px;
+    border: #dadada 1px solid;
+    border-radius:5px;
     padding:20px;
+    box-shadow: 4px 4px 30px 0 rgba(236, 236, 236, 0.25);
 }
 #agency-information-items{
     flex-direction:row;
@@ -449,6 +459,9 @@ input{
 }
 .information-item{
     flex:1;
+}
+.information-item-header{
+    font-family: 'Poppins-SemiBold', sans-serif;
 }
 
 /* FONT IMPORTS */
