@@ -41,8 +41,10 @@ function displayLocations(locationsArray){
                       <p>${item.details}</p>
                     </div>
                   </div>
+                  <div class="card-bottom">
                   <p class="card-rating">Rating: ${item.rating}</p>  
                   <p class="card-price">£${item.price}</p>
+                  </div>
                 </div>
                   <button class="book-button">Book</button>
               </div>

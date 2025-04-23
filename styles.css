@@ -20,19 +20,33 @@ h3{
     display: flex;
     flex-direction: row;
 }
-
 #sidebar {
-    flex: 1;
+    display:flex;
+    flex-direction:column;
     border-right: #bbbbbb 1px solid;
-    min-width: 200px;
-    justify-content: center;
+    width: 220px;
+    position:fixed;
+    height:100%;
+    background-color:white;
+    overflow-y: auto;
 }
+
+#sidebar-content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#sidebar-header{
+    border-bottom: #bbbbbb 1px solid;
+    padding: 15px;
+}
+
 #sidebar-links{
-    padding-left:30px;
-    text-align:left;
-}
-#sidebar li a span{
-    margin-left:7px;
+    list-style: none;
+    padding-left:15px;
+    margin-bottom: auto;
 }
 
 #sidebar li {
@@ -41,13 +55,18 @@ h3{
 }
 
 #sidebar li a {
-    display: block;
-    width: 140px;
-    padding: 3px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 8px 3px;
     border-radius:5px;
     text-decoration: none;
     color: black;
     box-sizing: border-box;
+}
+
+#sidebar li a i{
+    margin-right: 10px;
 }
 
 #sidebar li a:hover {
@@ -65,14 +84,33 @@ li a:hover{
     background-color: #efefef;
 }
 
-#sidebar-header{
-    border-bottom: #bbbbbb 1px solid;
-    padding-left: 15px;
+#agent{
+    border-top:#bbbbbb 1px solid;
+    padding-left:15px;
+    display:flex;
+    flex-direction:row;
+}
+#agent-details{
+    margin-left:20px;
+}
+#agent-icon{
+    justify-content:center;
+    align-content:center;
+}
+#agent-title{
+    font-family: 'Poppins-SemiBold', 'sans-serif';
+    margin-bottom:0;
+}
+#agent-name{
+    font-family: 'Poppins-Light', 'sans-serif';
+    margin-top:0;
 }
 
 #main-content {
-    flex: 5;
+    flex: 1;
     padding: 15px;
+    margin-left: 230px;
+    box-sizing: border-box;
 }
 
 #main-content-header{
@@ -158,7 +196,6 @@ input{
 .sort-filter select{
     margin-left:15px;
 }
-
 
 #displayHeader{
     display:flex;
@@ -253,6 +290,7 @@ input{
 }
 
 
+
 .book-button {
     margin-top: auto;
     width: 100%;
@@ -309,6 +347,108 @@ input{
     font-family: 'Poppins-SemiBold', 'sans-serif';
     padding: 0 15px;
     cursor: pointer;
+}
+
+.content-items{
+    display:flex;
+    width:100%;
+}
+#profile{
+    flex:1;
+    flex-direction:column;
+    margin:20px;
+    height:400px;
+    border: #bbbbbb 1px solid;
+    padding:20px;
+    border-radius:4px;
+}
+.profile-details{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.profile-details p{
+    margin:3px;
+}
+.circle{
+    border-radius:50%;
+    width:120px;
+    height:120px;
+    background-color: #e5e5e5;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins-SemiBold', sans-serif;
+    font-size: 30px;
+    margin-bottom:10px;
+}
+.circle p{
+    margin:0;
+    color: #505050;
+}
+
+#bookings-performance{
+    display:flex;
+    flex:3;
+    flex-direction:column;
+    margin:20px;
+}
+#bookings{
+    display:flex;
+    flex-direction:row;
+}
+#bookings-this-month{
+    display:flex;
+    flex-direction:column;
+    border: #bbbbbb 1px solid;
+    margin-right:20px;
+    flex:1;
+    padding:20px;
+    border-radius:4px;
+}
+#bookings-this-month p{
+    margin:3px;
+    font-size:30px;
+}
+
+#total-bookings{
+    display:flex;
+    flex-direction:column;
+    border: #bbbbbb 1px solid;
+    flex:1;
+    padding:20px;
+    border-radius:4px;
+}
+#total-bookings p{
+    margin:3px;
+    font-size:30px;
+}
+
+#performance{
+    display:flex;
+    flex-direction:column;
+    margin-top:20px;
+    border: #bbbbbb 1px solid;
+    height:100%;
+    padding:20px;
+}
+
+#agency-information{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    margin:20px;
+    border: #bbbbbb 1px solid;
+    border-radius:4px;
+    padding:20px;
+}
+#agency-information-items{
+    flex-direction:row;
+    display:flex;
+}
+.information-item{
+    flex:1;
 }
 
 /* FONT IMPORTS */
