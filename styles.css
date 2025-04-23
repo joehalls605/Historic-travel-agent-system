@@ -4,6 +4,11 @@ html, body {
     font-family: 'Poppins-Regular', 'sans-serif';
 }
 
+.header-title{
+    text-decoration:none;
+    color:black;
+}
+
 input{
     font-family: 'Poppins-SemiBold', 'sans-serif';
 }
