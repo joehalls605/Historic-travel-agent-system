@@ -1,3 +1,7 @@
+#booking-table-header{
+    background-color: #d9d9d9;
+}
+
 table{
     width:100%;
     border-collapse:collapse;
@@ -14,9 +18,16 @@ th{
 td {
     background-color: #fff;
 }
-tr:nth-child(even){
-    background-color: #f9f9f9;
+
+.deleteButton{
+    cursor:pointer;
+    font-size:16px;
+    padding:10px;
+    border-radius:5px;
+    margin-left:5px;
 }
-tr:hover {
-    background-color: #f1f1f1;
+
+.deleteButton:hover{
+    background-color: #efefef;
+
 }

@@ -90,6 +90,32 @@ app.get("/bookings", async(req, res) => {
     }
 });
 
+// POST HERE
+
+
+// DELETE
+
+app.delete("/bookings/:id", async(req, res) => {
+    try {
+        const bookingId = req.params.id;
+        console.log(`Attempting to delete booking with ID: ${bookingId}`);
+
+        // Find and delete the booking with the specified ID
+        const result = await Booking.findByIdAndDelete(bookingId);
+
+        if (!result) {
+            return res.status(404).json({ message: "Booking not found" });
+        }
+
+        res.json({ message: "Booking deleted successfully", deletedBooking: result });
+    } catch (err) {
+        console.error("Error deleting booking:", err);
+        res.status(500).send("Server Error");
+    }
+});
+
+
+
 // =================== SERVER STARTUP ===================
 // Start the Express server on the specified port
 app.listen(PORT, () => {

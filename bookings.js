@@ -65,21 +65,18 @@ document.addEventListener("DOMContentLoaded", initialiseBookings);
 
 // LOGIC HERE
 
-//
+// RENDER BOOKINGS
 
 function renderBookings(bookings){
     console.log("Render function called");
-    const tableBody = document.getElementById("booking-table");
-
-    // Clear existing table body before rendering new rows.
-    tableBody.innerHTML = "";
+    const tableBody = document.getElementById("booking-table-body");
 
     bookings.forEach(booking => {
         const row = document.createElement("tr");
 
         // Create and append table cells for each booking attribute
         const bookingIdCell = document.createElement("td");
-        bookingIdCell.textContent = booking.bookingId;
+        bookingIdCell.textContent = booking._id;
         row.appendChild(bookingIdCell);
 
         const firstNameCell = document.createElement("td");
@@ -100,29 +97,37 @@ function renderBookings(bookings){
 
         const deleteButton = document.createElement("i");
         deleteButton.classList.add("fa", "fa-trash");
-        deleteButton.cursor = "pointer";
-        deleteButton.fontsize = "15px";
-        deleteButton.addEventListener("click", async function(event){
+        deleteButton.classList.add("deleteButton");
+        deleteButton.addEventListener("click", () => deleteBooking(booking._id));
 
-            event.stopPropagation(); // why event.stopPropagation? JOE!
-            const confirmation = confirm("Are you sure you want to delete this booking?");
-            if(confirmation){
-                try{
-                    console.log("Attempting to delete booking with booking_id", booking.id);
-                    const response = await fetch(`http://localhost:5000/bookings/${booking._id}`, {
-                        method: "DELETE"
-                    });
-                    if(!response.ok){
-                        throw new Error("Failed to delete booking");
-                    }
-                    alert("Booking deleted successfully");
-                }catch(error){
-                    console.error("Error deleting booking", error);
-                    alert("Failed to delete booking. Check console for details");
-                }
-            }
-        });
         row.appendChild(deleteButton);
         tableBody.appendChild(row);
     })
+}
+
+async function deleteBooking(bookingId){
+    try {
+        console.log(`Deleting booking with ID: ${bookingId}`);
+
+        // Make sure bookingId is defined and not undefined
+        if (!bookingId) {
+            throw new Error("Booking ID is required");
+        }
+
+        const response = await fetch(`http://localhost:5000/bookings/${bookingId}`, {
+            method: 'DELETE',
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to delete booking (Status: ${response.status})`);
+        }
+
+        const result = await response.json();
+        console.log("Booking deleted successfully:", result);
+        tableBody.innerHTML = "";
+        initialiseBookings();
+
+    }catch (error) {
+        console.error("Error deleting booking:", error);
+    }
 }
