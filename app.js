@@ -142,5 +142,3 @@ function locationsDisplayedTotal(){
 
 
 
-
-

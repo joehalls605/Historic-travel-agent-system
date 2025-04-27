@@ -491,3 +491,105 @@ input{
     font-weight: 400;
     font-style: normal;
 }
+
+#burger-menu{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+}
+
+
+/* Media Queries */
+
+/* Mobile devices (phones, 0px to 600px) */
+@media (max-width: 600px) {
+    /* Styles for phones */
+}
+
+@media (max-width: 768px){
+    #sidebar{
+        transform: translateX(-20%);
+        transition: transform 0.3s ease;
+        position: fixed;
+        left:0;
+        top:0;
+        height:100%;
+        background-color: white;
+        width: 50px;
+        z-index: 997;
+        overflow-x: hidden;
+    }
+    #sidebar-content{
+        align-items: center; /* Center content horizontally in the collapsed state */
+    }
+    #sidebar-header{
+        border-bottom:0;
+        padding:0;
+    }
+    #sidebar-header h3{
+        display: none; /* Hide the title in collapsed state */
+    }
+    #sidebar-links span {
+        display: none; /* Hide the text labels in collapsed state */
+    }
+    #sidebar-links li a {
+        padding: 10px 10px;
+        justify-content: center;
+    }
+    #agent {
+        display: none; /* Optionally hide the agent info in collapsed state */
+    }
+    #main-content{
+        margin-left:25px;
+        width:100%;
+    }
+    #main-content-header{
+        display:flex;
+        flex-direction:column;
+    }
+    #displaySection{
+        flex-direction:column;
+    }
+    #search{
+        margin:0;
+    }
+    #displaySection{
+    width:100%;
+    }
+    #filters-container{
+        width:100%;
+    }
+    #displayedLocations{
+        grid-template-columns: 1fr;
+    }
+    #main-content{
+        display:flex;
+        flex-direction:column;
+    }
+    #filters-container{
+        display:flex;
+        flex-direction:column;
+    }
+    #filters{
+        display:flex;
+        flex-direction:column;
+    }
+    #filterButton{
+        margin-top:20px;
+    }
+}
+
+/* Tablets (portrait and landscape, 600px to 900px) */
+@media (max-width: 900px) {
+    /* Styles for tablets */
+}
+
+/* Small laptops (900px to 1200px) */
+@media (max-width: 1200px) {
+    /* Styles for small laptops */
+}
+
+/* Large screens (1200px and up) */
+@media (min-width: 1201px) {
+    /* Optional, but useful for making things look even better on big screens */
+}
