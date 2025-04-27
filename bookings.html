@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HistoricBooking</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bookings.css">
     <script src="https://kit.fontawesome.com/fa1071cf1c.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -35,20 +36,24 @@
             <div>
                 <h1>Bookings</h1>
             </div>
-            <div id="search">
-                <div class="search-box">
-                    <input id="searchInput" placeholder="Search historic locations...">
-                    <button id="searchButton">Search</button>
-                </div>
-            </div>
         </div>
+        <table id="booking-table">
+            <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>First Name</th>
+                <th>Surname</th>
+                <th>Location Name</th>
+                <th>Location Country</th>
+            </tr>
+            </thead>
+            <tbody id="booking-table-body">
 
+            </tbody>
+        </table>
         </div>
-
-
     </div>
-
-</div>
 <script type="module" src="app.js"></script>
+<script type="module" src="bookings.js"></script>
 </body>
 </html>

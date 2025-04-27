@@ -10,27 +10,28 @@ const bookingData = [
         "bookingId": "B001",
         "firstName": "John",
         "surname": "Doe",
-        "LocationName": "Caribbean",
-        "LocationCountry": "USA",
-        "LocationPrice": 500
+        "LocationName": "Normandy D-Day Beaches",
+        "LocationCountry": "France",
+        "LocationPrice": 25
     },
     {
         "bookingId": "B002",
         "firstName": "Jane",
         "surname": "Smith",
-        "LocationName": "Mediterranean",
-        "LocationCountry": "Greece",
-        "LocationPrice": 700
+        "LocationName": "Anne Frank House",
+        "LocationCountry": "Netherlands",
+        "LocationPrice": 16
     },
     {
         "bookingId": "B003",
         "firstName": "Alice",
         "surname": "Johnson",
-        "LocationName": "Alaska",
-        "LocationCountry": "USA",
-        "LocationPrice": 800
+        "LocationName": "Pearl Harbor National Memorial",
+        "LocationCountry": "United States",
+        "LocationPrice": 15
     }
 ];
+
 
 async function insertBookings() {
     let client;

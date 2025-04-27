@@ -357,6 +357,7 @@ input{
 .content-items{
     display:flex;
     width:100%;
+    flex-wrap:wrap;
 }
 #profile{
     flex:1;
@@ -449,6 +450,7 @@ input{
 #agency-information{
     width:100%;
     display:flex;
+    flex-wrap:wrap;
     flex-direction:column;
     margin-top:10px;
     margin-left:20px;
@@ -461,6 +463,7 @@ input{
 #agency-information-items{
     flex-direction:row;
     display:flex;
+    flex-wrap:wrap;
 }
 .information-item{
     flex:1;
