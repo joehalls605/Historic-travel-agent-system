@@ -46,7 +46,7 @@ function displayLocations(locationsArray){
                   <p class="card-price">£${item.price}</p>
                   </div>
                 </div>
-                  <button class="book-button">Book</button>
+                  <button class="locations-button">Book</button>
               </div>
             `;
         displayedLocations.appendChild(locationDiv);

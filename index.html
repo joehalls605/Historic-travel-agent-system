@@ -8,36 +8,38 @@
     <script src="https://kit.fontawesome.com/fa1071cf1c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="application-wrapper">
-        <div id="sidebar">
-            <div id="sidebar-content">
-                <div id="sidebar-header">
-                    <h3><a class="header-title" href="index.html">Historic Travels</a></h3>
-                </div>
+<div id="application-wrapper">
+    <div id="sidebar">
+        <div id="sidebar-content">
+            <div id="sidebar-header">
+                <h3><a class="header-title" href="index.html">Historic Travels</a></h3>
+            </div>
+            <nav id="sidebar-navigation">
                 <ul id="sidebar-links">
                     <li><a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
                     <li><a href="bookings.html"><i class="fas fa-book"></i> <span>Bookings</span></a></li>
                     <li><a href="account.html"><i class="fas fa-user"></i> <span>Account</span></a></li>
                 </ul>
-                <div id="agent">
-                    <div id="agent-icon">
-                        <i class="fas fa-user-circle fa-lg"></i>
-                    </div>
-                    <div id="agent-details">
-                        <p id="agent-title">Booking Agent</p>
-                        <p id="agent-name">Joseph Halls</p>
-                    </div>
+            </nav>
+            <div id="agent">
+                <div id="agent-icon">
+                    <i class="fas fa-user-circle fa-lg"></i>
+                </div>
+                <div id="agent-details">
+                    <p id="agent-title">Booking Agent</p>
+                    <p id="agent-name">Joseph Halls</p>
                 </div>
             </div>
         </div>
-        <div id="main-content">
+    </div>
+    <div id="main-content">
             <div id="main-content-header">
                 <div>
                     <h1>Historic WW2 Locations</h1>
                 </div>
                 <div id="search">
                     <div class="search-box">
-                        <input id="searchInput" placeholder="Search historic locations...">
+                        <input id="searchInput" placeholder="Search locations...">
                         <button id="searchButton">Search</button>
                     </div>
                 </div>
@@ -79,7 +81,7 @@
                             </select>
                         </div>
 
-                        <button class="button">Apply Filters</button>
+                        <button id="filter-button">Apply Filters</button>
                     </div>
                 </div>
             <div id="displaySection">
@@ -89,7 +91,7 @@
                     </div>
                     <div>
                         <div class="sort-filter">
-                            <label>Sort By</label>
+                            <label for="sortOptions">Sort By</label>
                             <select id="sortOptions" name="sortOptions">
                                 <option value="price-low">Price (Low to High)</option>
                                 <option value="price-high">Price (High to Low)</option>

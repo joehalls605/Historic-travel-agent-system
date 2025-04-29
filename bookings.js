@@ -67,6 +67,9 @@ function renderBookings(bookings){
     console.log("Render function called");
     const tableBody = document.getElementById("booking-table-body");
 
+    // Clear existing rows before rendering new ones
+    tableBody.innerHTML = "";
+
     bookings.forEach(booking => {
         const row = document.createElement("tr");
 
@@ -158,7 +161,7 @@ document.getElementById("new-booking-form").addEventListener("submit",  async fu
 
         // Clear all form fields
         document.getElementById("new-booking-form").reset();
-        location.reload();
+        initialiseBookings();
 
     }catch(error){
         console.error("Error adding booking:", error);
