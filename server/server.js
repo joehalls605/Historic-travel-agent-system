@@ -5,6 +5,7 @@ import mongoose from 'mongoose'; // Import mongoose to interact with MongoDB
 import express from 'express'; // Import express to create an API server
 import dotenv from 'dotenv'; // Import dotenv to manage environment variables
 import cors from 'cors'; // Import cors to enable cross-origin requests
+import { v4 as uuidv4 } from 'uuid';
 
 // =================== CONFIGURATION ===================
 
@@ -58,9 +59,6 @@ const bookingSchema = {
     },
     LocationCountry: {
         type: String, // The country of the location (optional)
-    },
-    LocationPrice: {
-        type: Number, // The price of the booking (optional)
     }
 }
 
@@ -91,7 +89,32 @@ app.get("/bookings", async(req, res) => {
 });
 
 // POST HERE
+app.post("/bookings", async(req, res) => {
+    try{
+        // Destructuring (pull out) the data from req body so I can use the variables
+        const {firstName, surname, location, country} = req.body;
 
+        // Checking if fields are present
+        if(!firstName || !surname || !location || !country){
+            return res.status(400).send("All fields are required");
+        }
+
+        // Create new booking instance
+        const newBooking = new Booking({
+            bookingId: uuidv4(), // generate a unique id
+            firstName,
+            surname,
+            LocationName: location,
+            LocationCountry: country
+        });
+
+        await newBooking.save();
+        res.status(201).send("Booking created successfully!");
+    }catch(err){
+        console.log("Error creating booking at server", err);
+        res.status(500).send("Server Error");
+    }
+});
 
 // DELETE
 

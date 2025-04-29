@@ -61,10 +61,6 @@ async function initialiseBookings(){
 
 document.addEventListener("DOMContentLoaded", initialiseBookings);
 
-// CREATING A NEW BOOKING LOGIC SET UP HERE
-
-// LOGIC HERE
-
 // RENDER BOOKINGS
 
 function renderBookings(bookings){
@@ -76,7 +72,7 @@ function renderBookings(bookings){
 
         // Create and append table cells for each booking attribute
         const bookingIdCell = document.createElement("td");
-        bookingIdCell.textContent = booking._id;
+        bookingIdCell.textContent = booking.bookingId;
         row.appendChild(bookingIdCell);
 
         const firstNameCell = document.createElement("td");
@@ -132,3 +128,40 @@ async function deleteBooking(bookingId){
         console.error("Error deleting booking:", error);
     }
 }
+
+
+// CREATE A NEW BOOKING
+
+document.getElementById("new-booking-form").addEventListener("submit",  async function(event){
+    event.preventDefault();  // stops the form from reloading the page, I want to handle manually.
+
+    const newBookingData = {
+        firstName: document.getElementById("firstName").value,
+        surname: document.getElementById("surname").value,
+        location: document.getElementById("location").value,
+        country: document.getElementById("country").value
+    }
+
+    try{
+        // SEND POST request to the server
+        const response = await fetch("http://localhost:5000/bookings", {
+            method: "POST",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newBookingData)
+        });
+        if(!response.ok){
+            throw new Error("Failed to add booking");
+        }
+        alert("Booking added successfully");
+
+        // Clear all form fields
+        document.getElementById("new-booking-form").reset();
+        location.reload();
+
+    }catch(error){
+        console.error("Error adding booking:", error);
+        alert("Failed to add booking. Check console for details.");
+    }
+});
