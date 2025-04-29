@@ -143,7 +143,7 @@ li a:hover{
     margin-bottom:4px;
     height:30px;
 }
-#filterButton{
+.button{
     align-self: flex-end;
     height: 40px;
     font-family: 'Poppins-SemiBold', 'sans-serif';
@@ -153,14 +153,12 @@ li a:hover{
     transition: background-color 0.3s ease;
     flex: 0.5;
 }
-.filterButton:hover{
+.button:hover{
     font-family: 'Poppins-SemiBold', 'sans-serif';
     background-color: #0b0b0b;
     color:white;
     border-radius:4px;
-    height:40px;
     cursor: pointer;
-    box-shadow: 0 1px 1px rgba(0,0,0.1);
 }
 .filter select{
     height:40px;
@@ -296,7 +294,7 @@ input{
 
 
 
-.book-button {
+.button {
     margin-top: auto;
     width: 100%;
     height: 50px;
@@ -307,7 +305,7 @@ input{
     transition: background-color 0.3s ease;
 }
 
-.book-button:hover {
+.button:hover {
     background-color: #222;
     cursor: pointer;
 }
@@ -499,6 +497,8 @@ input{
 }
 
 
+
+
 /* Media Queries */
 
 /* Mobile devices (phones, 0px to 600px) */
@@ -574,10 +574,12 @@ input{
         display:flex;
         flex-direction:column;
     }
-    #filterButton{
+    .button{
         margin-top:20px;
     }
 }
+
+
 
 /* Tablets (portrait and landscape, 600px to 900px) */
 @media (max-width: 900px) {

@@ -124,6 +124,7 @@ async function deleteBooking(bookingId){
 
         const result = await response.json();
         console.log("Booking deleted successfully:", result);
+        const tableBody = document.getElementById("booking-table-body");
         tableBody.innerHTML = "";
         initialiseBookings();
 
