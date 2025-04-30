@@ -10,17 +10,18 @@
 </head>
 <body>
 <div id="application-wrapper">
-    <nav id="sidebar-navigation">
     <div id="sidebar">
         <div id="sidebar-content">
             <div id="sidebar-header">
                 <h3><a class="header-title" href="index.html">Historic Travels</a></h3>
             </div>
-            <ul id="sidebar-links">
-                <li><a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
-                <li><a href="bookings.html"><i class="fas fa-book"></i> <span>Bookings</span></a></li>
-                <li><a href="account.html"><i class="fas fa-user"></i> <span>Account</span></a></li>
-            </ul>
+            <nav id="sidebar-navigation">
+                <ul id="sidebar-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                    <li><a href="bookings.html"><i class="fas fa-book"></i> <span>Bookings</span></a></li>
+                    <li><a href="account.html"><i class="fas fa-user"></i> <span>Account</span></a></li>
+                </ul>
+            </nav>
             <div id="agent">
                 <div id="agent-icon">
                     <i class="fas fa-user-circle fa-lg"></i>
@@ -32,64 +33,67 @@
             </div>
         </div>
     </div>
+
     <div id="main-content">
         <div id="main-content-header">
             <div>
                 <h1>Bookings</h1>
             </div>
         </div>
+
         <div id="booking-content">
             <h3>Create booking</h3>
-        <form id="new-booking-form">
-            <input type="text" id="firstName" placeholder="First Name" />
-            <input type="text" id="surname" placeholder="Surname" />
-            <select id="location">
-                <option value="" disabled selected>Select a location</option>
-                <option value="Normandy D-Day Beaches">Normandy D-Day Beaches</option>
-                <option value="Auschwitz-Birkenau Memorial">Auschwitz-Birkenau Memorial</option>
-                <option value="Pearl Harbor National Memorial">Pearl Harbor National Memorial</option>
-                <option value="Churchill War Rooms">Churchill War Rooms</option>
-                <option value="Anne Frank House">Anne Frank House</option>
-                <option value="Hiroshima Peace Memorial">Hiroshima Peace Memorial</option>
-                <option value="Berlin Reichstag Building">Berlin Reichstag Building</option>
-                <option value="Warsaw Uprising Museum">Warsaw Uprising Museum</option>
-                <option value="Dunkirk Beach">Dunkirk Beach</option>
-                <option value="Bletchley Park">Bletchley Park</option>
-                <option value="Bastogne War Museum">Bastogne War Museum</option>
-            </select>
-            <select id="country">
-                <option value="" disabled selected>Select a country</option>
-                <option value="France">France</option>
-                <option value="Poland">Poland</option>
-                <option value="United States">United States</option>
-                <option value="United Kingdom">United Kingdom</option>
-                <option value="Netherlands">Netherlands</option>
-                <option value="Japan">Japan</option>
-                <option value="Germany">Germany</option>
-                <option value="Belgium">Belgium</option>
-            </select>
-            <button type="submit" class="button">Add Booking</button>
-        </form>
-            <div id="active-bookings">
-            <h3>Active bookings</h3>
-            <table id="booking-table">
-                <thead id="booking-table-header">
-                <tr>
-                    <th>Booking ID</th>
-                    <th>First Name</th>
-                    <th>Surname</th>
-                    <th>Location Name</th>
-                    <th>Location Country</th>
-                </tr>
-                </thead>
-                <tbody id="booking-table-body">
+            <form id="new-booking-form">
+                <input type="text" id="firstName" placeholder="First Name" />
+                <input type="text" id="surname" placeholder="Surname" />
+                <select id="location">
+                    <option value="" disabled selected>Select a location</option>
+                    <option value="Normandy D-Day Beaches">Normandy D-Day Beaches</option>
+                    <option value="Auschwitz-Birkenau Memorial">Auschwitz-Birkenau Memorial</option>
+                    <option value="Pearl Harbor National Memorial">Pearl Harbor National Memorial</option>
+                    <option value="Churchill War Rooms">Churchill War Rooms</option>
+                    <option value="Anne Frank House">Anne Frank House</option>
+                    <option value="Hiroshima Peace Memorial">Hiroshima Peace Memorial</option>
+                    <option value="Berlin Reichstag Building">Berlin Reichstag Building</option>
+                    <option value="Warsaw Uprising Museum">Warsaw Uprising Museum</option>
+                    <option value="Dunkirk Beach">Dunkirk Beach</option>
+                    <option value="Bletchley Park">Bletchley Park</option>
+                    <option value="Bastogne War Museum">Bastogne War Museum</option>
+                </select>
+                <select id="country">
+                    <option value="" disabled selected>Select a country</option>
+                    <option value="France">France</option>
+                    <option value="Poland">Poland</option>
+                    <option value="United States">United States</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Belgium">Belgium</option>
+                </select>
+                <button type="submit" class="button">Add Booking</button>
+            </form>
 
-                </tbody>
-            </table>
+            <div id="active-bookings">
+                <h3>Active bookings</h3>
+                <table id="booking-table">
+                    <thead id="booking-table-header">
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>First Name</th>
+                        <th>Surname</th>
+                        <th>Location Name</th>
+                        <th>Location Country</th>
+                    </tr>
+                    </thead>
+                    <tbody id="booking-table-body">
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-    </div>
+</div>
+
 <script type="module" src="app.js"></script>
 <script type="module" src="bookings.js"></script>
 </body>

@@ -29,7 +29,7 @@ h3{
     display:flex;
     flex-direction:column;
     border-right: #bbbbbb 1px solid;
-    width: 220px;
+    width: 200px;
     position:fixed;
     height:100%;
     background-color:white;
@@ -57,14 +57,15 @@ h3{
 #sidebar li {
     list-style: none;
     margin-top: 10px;
+    width:60%;
+    border-radius:7px;
+    padding:3px;
 }
 
 #sidebar li a {
     display: flex;
     align-items: center;
-    width: 100%;
     padding: 8px 3px;
-    border-radius:5px;
     text-decoration: none;
     color: black;
     box-sizing: border-box;
@@ -74,7 +75,7 @@ h3{
     margin-right: 10px;
 }
 
-#sidebar li a:hover {
+#sidebar li:hover {
     background-color: #efefef;
 }
 
@@ -89,14 +90,23 @@ li a:hover{
     background-color: #efefef;
 }
 
+#sidebar-navigation{
+    display:flex;
+    flex-direction:column;
+    flex:6;
+}
+
 #agent{
     border-top:#bbbbbb 1px solid;
-    padding-left:15px;
     display:flex;
     flex-direction:row;
+    flex:1;
+    padding-left:15px;
 }
 #agent-details{
-    margin-left:20px;
+    margin-left:10px;
+    justify-content:center;
+    align-content:center;
 }
 #agent-icon{
     justify-content:center;
@@ -299,6 +309,7 @@ input{
 .card-details {
     color: #555;
     margin-bottom: 12px;
+    font-size:14px;
 }
 
 .card-country {

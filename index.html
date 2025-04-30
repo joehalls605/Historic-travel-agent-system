@@ -32,85 +32,84 @@
             </div>
         </div>
     </div>
+
     <div id="main-content">
-            <div id="main-content-header">
-                <div>
-                    <h1>Historic WW2 Locations</h1>
-                </div>
-                <div id="search">
-                    <div class="search-box">
-                        <input id="searchInput" placeholder="Search locations...">
-                        <button id="searchButton">Search</button>
-                    </div>
+        <div id="main-content-header">
+            <div>
+                <h1>World War Two Locations</h1>
+            </div>
+            <div id="search">
+                <div class="search-box">
+                    <input id="searchInput" placeholder="Search locations...">
+                    <button id="searchButton">Search</button>
                 </div>
             </div>
-            <div id="filters-container">
-                <h3>Filters</h3>
-                    <div id="filters">
-                        <div class="filter">
-                            <label>Country</label>
-                            <select id="countryOptions" name="countryOptions">
-                                <option value="All">All Countries</option>
-                                <option value="France">France</option>
-                                <option value="Poland">Poland</option>
-                                <option value="United States">United States</option>
-                                <option value="United Kingdom">United Kingdom</option>
-                                <option value="Netherlands">Netherlands</option>
-                                <option value="Japan">Japan</option>
-                                <option value="Germany">Germany</option>
-                                <option value="Belgium">Belgium</option>
-                            </select>
-                        </div>
-                        <div class="filter">
-                            <label>Topic</label>
-                            <select id="topicOptions" name="topicOptions">
-                                <option value="All">Any Topic</option>
-                                <option value="Battlefield">Battlefield</option>
-                                <option value="Memorial">Memorial</option>
-                                <option value="Museum">Museum</option>
-                                <option value="Historical">Historical</option>
-                            </select>
-                        </div>
-                        <div class="filter">
-                            <label>Sort By</label>
-                            <select id="ratingOptions" name="ratingOptions">
-                                <option value="0">All Ratings</option>
-                                <option value="4.5">4.5+ Stars</option>
-                                <option value="4.7" >4.7+ Stars</option>
-                                <option value="4.9">4.9+ Stars</option>
-                            </select>
-                        </div>
-
-                        <button id="filter-button">Apply Filters</button>
-                    </div>
-                </div>
-            <div id="displaySection">
-                <div id="displayHeader">
-                    <div>
-                        <h4 id="displayedLocationsValue"></h4>
-                    </div>
-                    <div>
-                        <div class="sort-filter">
-                            <label for="sortOptions">Sort By</label>
-                            <select id="sortOptions" name="sortOptions">
-                                <option value="price-low">Price (Low to High)</option>
-                                <option value="price-high">Price (High to Low)</option>
-                                <option value="rating-low">Rating (Low to High)</option>
-                                <option value="rating-high">Rating (High to Low)</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="displayedLocations">
-
-                </div>
-            </div>
-
-
         </div>
 
+        <div id="filters-container">
+            <h3>Filters</h3>
+            <div id="filters">
+                <div class="filter">
+                    <label>Country</label>
+                    <select id="countryOptions" name="countryOptions">
+                        <option value="All">All Countries</option>
+                        <option value="France">France</option>
+                        <option value="Poland">Poland</option>
+                        <option value="United States">United States</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Belgium">Belgium</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <label>Topic</label>
+                    <select id="topicOptions" name="topicOptions">
+                        <option value="All">Any Topic</option>
+                        <option value="Battlefield">Battlefield</option>
+                        <option value="Memorial">Memorial</option>
+                        <option value="Museum">Museum</option>
+                        <option value="Historical">Historical</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <label>Sort By</label>
+                    <select id="ratingOptions" name="ratingOptions">
+                        <option value="0">All Ratings</option>
+                        <option value="4.5">4.5+ Stars</option>
+                        <option value="4.7">4.7+ Stars</option>
+                        <option value="4.9">4.9+ Stars</option>
+                    </select>
+                </div>
+                <button id="filter-button">Apply Filters</button>
+            </div>
+        </div>
+
+        <div id="displaySection">
+            <div id="displayHeader">
+                <div>
+                    <h4 id="displayedLocationsValue"></h4>
+                </div>
+                <div>
+                    <div class="sort-filter">
+                        <label for="sortOptions">Sort By</label>
+                        <select id="sortOptions" name="sortOptions">
+                            <option value="price-low">Price (Low to High)</option>
+                            <option value="price-high">Price (High to Low)</option>
+                            <option value="rating-low">Rating (Low to High)</option>
+                            <option value="rating-high">Rating (High to Low)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="displayedLocations">
+            </div>
+        </div>
     </div>
+</div>
+
 <script type="module" src="app.js"></script>
 </body>
 </html>
