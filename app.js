@@ -130,8 +130,23 @@ function locationsDisplayedTotal(){
     return currentDisplayedLocations.length;
 }
 
+// CARD BUTTON LOGIC
 
+document.addEventListener("click", function(event){
+    if(event.target && event.target.classList.contains("card-button")){
+        handleBook(event);
+    }
+});
 
+function handleBook(event){
+    const card = event.target.closest(".location-card");
+    const locationName = card.querySelector("h3").textContent;
+    const selectedLocation = locationData.locations.find(loc => loc.name === locationName);
+    if(selectedLocation){
+        localStorage.setItem("selectedLocation", JSON.stringify(selectedLocation));
+        window.location.href = "bookDetails.html";
+    }
+}
 
 
 
