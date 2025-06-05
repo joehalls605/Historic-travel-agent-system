@@ -42,11 +42,12 @@
         </div>
 
         <div id="booking-content">
-            <h3>Create booking</h3>
+            <div id="booking-header">
+            <h3>Create a new booking</h3>
             <form id="new-booking-form">
-                <input type="text" id="firstName" placeholder="First Name" />
-                <input type="text" id="surname" placeholder="Surname" />
-                <select id="location">
+                <input id="firstNameInput" type="text" placeholder="First Name" />
+                <input id="surnameInput" type="text" placeholder="Surname" />
+                <select id="locationSelect">
                     <option value="" disabled selected>Select a location</option>
                     <option value="Normandy D-Day Beaches">Normandy D-Day Beaches</option>
                     <option value="Auschwitz-Birkenau Memorial">Auschwitz-Birkenau Memorial</option>
@@ -60,7 +61,7 @@
                     <option value="Bletchley Park">Bletchley Park</option>
                     <option value="Bastogne War Museum">Bastogne War Museum</option>
                 </select>
-                <select id="country">
+                <select id="countrySelect">
                     <option value="" disabled selected>Select a country</option>
                     <option value="France">France</option>
                     <option value="Poland">Poland</option>
@@ -71,8 +72,9 @@
                     <option value="Germany">Germany</option>
                     <option value="Belgium">Belgium</option>
                 </select>
-                <button type="submit" class="button">Add Booking</button>
+                <button type="submit" class="addBookingButton">Add Booking</button>
             </form>
+            </div>
 
             <div id="active-bookings">
                 <h3>Active bookings</h3>

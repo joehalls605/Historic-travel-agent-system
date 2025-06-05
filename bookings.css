@@ -19,6 +19,40 @@ td {
     background-color: #fff;
 }
 
+#firstNameInput {
+    width: 200px;
+    padding-left: 5px;
+    color: black !important;
+}
+
+input::placeholder {
+    color: black;
+    opacity: 1;
+}
+
+#surnameInput {
+    width: 200px;
+    padding-left: 5px;
+    color: black !important;
+}
+
+#countrySelect{
+    width: 200px;
+}
+#locationSelect{
+    width: 200px;
+}
+
+.addBookingButton{
+    height: 50px;
+    font-family: 'Poppins-SemiBold', 'sans-serif';
+    background-color: #000000;
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    width: 200px;
+}
+
 .deleteButton{
     cursor:pointer;
     font-size:16px;
@@ -41,6 +75,11 @@ td {
     margin-top:30px;
 }
 
+#booking-header{
+    background-color: #fbfbfb;
+    padding: 15px;
+}
+
 #new-booking-form{
     display:flex;
     width:100%;
@@ -52,7 +91,6 @@ td {
 }
 
 #new-booking-form input{
-    margin-right:10px;
     height: 47px;
     padding:1px;
 }

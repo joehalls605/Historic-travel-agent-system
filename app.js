@@ -26,8 +26,11 @@ document.addEventListener("DOMContentLoaded", function(){
 function displayLocations(locationsArray){
     displayedLocations.innerHTML = "";
 
+
     locationsArray.forEach(item => {
         const locationDiv = document.createElement("div");
+        const priceText = item.price === 0 ? 'Free entry' : `£${item.price}`;
+
         locationDiv.innerHTML = `
               <div class="location-card">
                 <img class="location-card-image" alt="image" src="${item.image}">
@@ -43,10 +46,10 @@ function displayLocations(locationsArray){
                   </div>
                   <div class="card-bottom">
                   <p class="card-rating">Rating: ${item.rating}</p>  
-                  <p class="card-price">£${item.price}</p>
+                  <p class="card-price">${priceText}</p>
                   </div>
                 </div>
-                  <button class="locations-button">Book</button>
+                  <button class="card-button">Book</button>
               </div>
             `;
         displayedLocations.appendChild(locationDiv);
