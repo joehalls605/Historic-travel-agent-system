@@ -32,24 +32,34 @@ document.addEventListener("DOMContentLoaded", function(){
             <div class="booking-sidebar">
               <p class="price">£${location.price} <span class="per-person">per person</span></p>
               <form>
-                <label for="booking-date">Select Date</label>
-                <input type="date" id="booking-date" required />
-
-                <label for="booking-people">Number of People</label>
-                <select id="booking-people">
-                  <option value="1">1 Person</option>
-                  <option value="2">2 People</option>
-                  <option value="3">3 People</option>
-                  <option value="4">4 People</option>
-                </select>
+                <div class="booking-date-row">
+                    <label for="booking-date">Select Date</label>
+                    <br>
+                    <input type="date" id="booking-date" required />
+                </div>
+                <div id="booking-people-row">
+                       <label for="booking-people">Number of People</label>
+                       <br>
+                       <select id="booking-people">
+                          <option value="1">1 Person</option>
+                          <option value="2">2 People</option>
+                          <option value="3">3 People</option>
+                          <option value="4">4 People</option>
+                    </select>
+                </div>
 
                 <div class="price-summary">
-                  <p>Total Price: <strong id="total-price">$${location.price}</strong></p>
-                  <p class="price-breakdown">1 person × $${location.price}</p>
+                    <div class="price-summary-row">
+                        <p id="total-price">Total Price:</p>
+                        <p><strong id="total-price-figure">£${location.price}</strong></p>
+                    </div>
+                  <p class="price-breakdown">1 person × £${location.price}</p>
                 </div>
 
                 <button type="button" class="book-now-button">Book This Tour</button>
-                <p class="cancellation-policy">Free cancellation up to 24 hours before the tour</p>
+                <div class="cancellation-policy">
+                <p>Free cancellation up to 24 hours before the tour</p>
+                </div>
               </form>
             </div>
           </div>
@@ -59,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
             const price = location.price;
             const peopleSelect = document.getElementById("booking-people");
-            const totalPriceDisplay = document.getElementById("total-price");
+            const totalPriceDisplay = document.getElementById("total-price-figure");
 
             peopleSelect.addEventListener("change", () => {
                 const people = parseInt(peopleSelect.value);
@@ -67,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     totalPriceDisplay.textContent = "Free";
                 }
                 else{
-                    totalPriceDisplay.textContent = `$${people * price}`;
+                    totalPriceDisplay.textContent = `£${people * price}`;
                 }
             });
         }
