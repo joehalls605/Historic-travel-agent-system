@@ -7,10 +7,69 @@ document.addEventListener("DOMContentLoaded", function(){
 
         if(mainContent){
             mainContent.innerHTML = `
-            <h1>${location.name}</h1>
-            <img src="${location.image}">
-            <p>Country:${location.country}</p>
-            `
+        <div class="book-details-wrapper">
+          <div class="location-main">
+            <div class="location-image-placeholder">
+              <span class="badge">${location.topic || "Museum"}</span>
+              <img id="location-image" src="${location.image}" alt="${location.name}">
+            </div>
+          </div>
+
+          <div class="booking-content">
+            <div class="location-header">
+              <div class="location-header-items">
+                  <h1 id="locationName">${location.name}</h1>
+              </div>
+              <div class="location-meta">
+                <span><i class="locationIcon fas fa-map-marker-alt"></i> ${location.country}</span>
+                <span><i class="calendarIcon fas fa-calendar"></i> ${location.year || "n/a"}</span>
+                <span><i class="ratingIcon fas fa-star"></i> ${location.rating}</span>  
+              </div>
+              <p>${location.description}</p>
+             
+            </div>
+
+            <div class="booking-sidebar">
+              <p class="price">£${location.price} <span class="per-person">per person</span></p>
+              <form>
+                <label for="booking-date">Select Date</label>
+                <input type="date" id="booking-date" required />
+
+                <label for="booking-people">Number of People</label>
+                <select id="booking-people">
+                  <option value="1">1 Person</option>
+                  <option value="2">2 People</option>
+                  <option value="3">3 People</option>
+                  <option value="4">4 People</option>
+                </select>
+
+                <div class="price-summary">
+                  <p>Total Price: <strong id="total-price">$${location.price}</strong></p>
+                  <p class="price-breakdown">1 person × $${location.price}</p>
+                </div>
+
+                <button type="button" class="book-now-button">Book This Tour</button>
+                <p class="cancellation-policy">Free cancellation up to 24 hours before the tour</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      `;
+            // Dynamic price update logic
+
+            const price = location.price;
+            const peopleSelect = document.getElementById("booking-people");
+            const totalPriceDisplay = document.getElementById("total-price");
+
+            peopleSelect.addEventListener("change", () => {
+                const people = parseInt(peopleSelect.value);
+                if(price === 0){
+                    totalPriceDisplay.textContent = "Free";
+                }
+                else{
+                    totalPriceDisplay.textContent = `$${people * price}`;
+                }
+            });
         }
     }
     else{
