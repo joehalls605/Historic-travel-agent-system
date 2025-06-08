@@ -151,6 +151,26 @@ app.delete("/bookings/:id", async(req, res) => {
     }
 });
 
+app.get("/bookings/monthly-count", async (req, res) => {
+    try{
+        const startOfMonth = new Date();
+        startOfMonth.setDate(1);
+        startOfMonth.setHours(0, 0, 0, 0);
+
+        const endOfMonth = new Date(startOfMonth);
+        endOfMonth.setMonth(endOfMonth.getMonth() + 1);
+
+        const count = await Booking.countDocuments({
+           bookingDate: {$gte: startOfMonth, $lt: endOfMonth}
+        });
+
+        res.json({count});
+    } catch(err){
+        console.log("Error fetching monthly booking count:", err);
+        res.status(500).send("Server Error");
+    }
+})
+
 
 
 // =================== SERVER STARTUP ===================
