@@ -105,7 +105,7 @@ app.post("/bookings", async(req, res) => {
         const {firstName, surname, location, country, bookingDate, attendees} = req.body;
 
         // Checking if fields are present
-        if(!firstName || !surname || !location || !country){
+        if(!firstName || !surname || !location || !country || !bookingDate || !attendees){
             return res.status(400).send("All fields are required");
         }
 

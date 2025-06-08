@@ -37,16 +37,26 @@ document.addEventListener("DOMContentLoaded", function(){
                     <br>
                     <input type="date" id="booking-date" required />
                 </div>
-                <div id="booking-people-row">
-                       <label for="booking-people">Number of People</label>
+                <div id="booking-attendees-row">
+                       <label for="booking-attendees">Number of Attendees</label>
                        <br>
-                       <select id="booking-people">
-                          <option value="1">1 Person</option>
-                          <option value="2">2 People</option>
-                          <option value="3">3 People</option>
-                          <option value="4">4 People</option>
+                       <select id="booking-attendees" required>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
                     </select>
                 </div>
+                    <div id="customer-details-row">
+                       <label for="customer-firstName">Customer Firstname</label>
+                       <input id="customer-firstName" type="text" placeholder="Please enter first name" required/>
+                       <label for="customer-surname">Customer Surname</label>
+                       <input id="customer-surname" type="text" placeholder="Please enter surname" required/>
+                    </select>
+                </div>
+                
 
                 <div class="price-summary">
                     <div class="price-summary-row">
@@ -56,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function(){
                   <p class="price-breakdown">1 person × £${location.price}</p>
                 </div>
 
-                <button type="button" class="book-now-button">Book This Tour</button>
+                <button type="button" class="book-button">Book This Tour</button>
                 <div class="cancellation-policy">
                 <p>Free cancellation up to 24 hours before the tour</p>
                 </div>
@@ -68,16 +78,16 @@ document.addEventListener("DOMContentLoaded", function(){
             // Dynamic price update logic
 
             const price = location.price;
-            const peopleSelect = document.getElementById("booking-people");
+            const attendeesSelect = document.getElementById("booking-attendees");
             const totalPriceDisplay = document.getElementById("total-price-figure");
 
-            peopleSelect.addEventListener("change", () => {
-                const people = parseInt(peopleSelect.value);
+            attendeesSelect.addEventListener("change", () => {
+                const attendees = parseInt(attendeesSelect.value);
                 if(price === 0){
                     totalPriceDisplay.textContent = "Free";
                 }
                 else{
-                    totalPriceDisplay.textContent = `£${people * price}`;
+                    totalPriceDisplay.textContent = `£${attendees * price}`;
                 }
             });
         }
@@ -85,4 +95,49 @@ document.addEventListener("DOMContentLoaded", function(){
     else{
         document.getElementById("main-content").innerHTML = "<p>No booking details found!</p>";
     }
+
+
+    const bookButton = document.querySelector(".book-button");
+    bookButton.addEventListener("click", async () => {
+
+        const firstName = document.getElementById("customer-firstName").value;
+        const surname = document.getElementById("customer-surname").value;
+        const bookingDate = document.getElementById("booking-date").value;
+        const attendees = Number(document.getElementById("booking-attendees").value);
+
+        // Get selected location from localStorage
+        const locationDataString = localStorage.getItem("selectedLocation");
+        if(!locationDataString){
+            alert("No location selected");
+        }
+        const location = JSON.parse(locationDataString);
+
+        const newBooking = {
+            firstName,
+            surname,
+            location:location.name,
+            country:location.country,
+            bookingDate,
+            attendees
+        };
+        console.log("Submitting booking from bookDetails.js", newBooking);
+
+        try{
+            const response = await fetch("http://localhost:5000/bookings", {
+                method: "POST",
+                headers: {"Content-Type" : "application/json"},
+                body: JSON.stringify(newBooking)
+            });
+
+            if(!response.ok){
+                throw new Error("Failed to create booking in bookingDetails");
+            }
+
+            alert("Booking successful!");
+            window.location.href="bookings.html";
+        } catch(error){
+            console.error("Error submitting booking:", error);
+            alert("Something went wrong while submitting the booking");
+        }
+    });
 });

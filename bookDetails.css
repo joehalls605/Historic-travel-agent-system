@@ -82,12 +82,12 @@
     margin-top:10px;
     width:95%;
 }
-#booking-people{
+#booking-attendees{
     margin-left:5px;
     margin-top:10px;
     width:95%;
 }
-#booking-people-row{
+#booking-attendees-row{
     margin-top:20px;
 }
 .price-summary{
@@ -120,7 +120,7 @@
     margin:0px;
     margin-left:5px;
 }
-.book-now-button{
+.book-button{
     font-family: 'Poppins-SemiBold', 'sans-serif';
     background-color: #000000;
     color: white;
@@ -141,4 +141,14 @@
     color:gray;
     display:flex;
     justify-content:center;
+}
+#customer-details-row{
+    display:flex;
+    flex-direction:column;
+    margin-top:10px;
+    width:98%;
+}
+#customer-firstName{
+    margin-bottom:10px;
+    width:98%;
 }
