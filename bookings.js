@@ -94,6 +94,21 @@ function renderBookings(bookings){
         locationCountry.textContent = booking.LocationCountry;
         row.appendChild(locationCountry);
 
+        const date = document.createElement("td");
+        const dateObj = new Date(booking.bookingDate); // Creating a JavaScript date object
+        date.textContent = isNaN(dateObj.getTime())
+            ? "Invalid Date" // If the date is invalid
+            : dateObj.toLocaleDateString("en-GB", { // if valid, turn into UK format
+                day:"2-digit",
+                month:"2-digit",
+                year:"numeric"
+            });
+        row.appendChild(date);
+
+        const attendees = document.createElement("td");
+        attendees.textContent = booking.attendees;
+        row.appendChild(attendees);
+
         const deleteButton = document.createElement("i");
         deleteButton.classList.add("fa", "fa-trash");
         deleteButton.classList.add("deleteButton");
@@ -139,11 +154,15 @@ document.getElementById("new-booking-form").addEventListener("submit",  async fu
     event.preventDefault();  // stops the form from reloading the page, I want to handle manually.
 
     const newBookingData = {
-        firstName: document.getElementById("firstName").value,
-        surname: document.getElementById("surname").value,
-        location: document.getElementById("location").value,
-        country: document.getElementById("country").value
+        firstName: document.getElementById("firstNameInput").value,
+        surname: document.getElementById("surnameInput").value,
+        location: document.getElementById("locationSelect").value,
+        country: document.getElementById("countrySelect").value,
+        bookingDate: document.getElementById("date").value,
+        attendees: Number(document.getElementById("attendeesInput").value)
     }
+
+    console.log("Submitting booking:", newBookingData);
 
     try{
         // SEND POST request to the server

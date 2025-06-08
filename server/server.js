@@ -59,6 +59,16 @@ const bookingSchema = {
     },
     LocationCountry: {
         type: String, // The country of the location (optional)
+    },
+    bookingDate: {
+        type: Date,
+        required: true,
+        default: Date.now
+    },
+    attendees:{
+        type: Number,
+        required: true,
+        min: 1
     }
 }
 
@@ -92,7 +102,7 @@ app.get("/bookings", async(req, res) => {
 app.post("/bookings", async(req, res) => {
     try{
         // Destructuring (pull out) the data from req body so I can use the variables
-        const {firstName, surname, location, country} = req.body;
+        const {firstName, surname, location, country, bookingDate, attendees} = req.body;
 
         // Checking if fields are present
         if(!firstName || !surname || !location || !country){
@@ -105,8 +115,12 @@ app.post("/bookings", async(req, res) => {
             firstName,
             surname,
             LocationName: location,
-            LocationCountry: country
+            LocationCountry: country,
+            bookingDate: bookingDate ? new Date(bookingDate) : new Date(),
+            attendees
         });
+
+        console.log("Booking to be saved:", newBooking);
 
         await newBooking.save();
         res.status(201).send("Booking created successfully!");

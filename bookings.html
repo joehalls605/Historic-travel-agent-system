@@ -45,9 +45,9 @@
             <div id="booking-header">
             <h3>Create a new booking</h3>
             <form id="new-booking-form">
-                <input id="firstNameInput" type="text" placeholder="First Name" />
-                <input id="surnameInput" type="text" placeholder="Surname" />
-                <select id="locationSelect">
+                <input id="firstNameInput" name="firstName" type="text" placeholder="First Name" />
+                <input id="surnameInput" name="surname" type="text" placeholder="Surname" />
+                <select id="locationSelect" name="location">
                     <option value="" disabled selected>Select a location</option>
                     <option value="Normandy D-Day Beaches">Normandy D-Day Beaches</option>
                     <option value="Auschwitz-Birkenau Memorial">Auschwitz-Birkenau Memorial</option>
@@ -61,7 +61,7 @@
                     <option value="Bletchley Park">Bletchley Park</option>
                     <option value="Bastogne War Museum">Bastogne War Museum</option>
                 </select>
-                <select id="countrySelect">
+                <select id="countrySelect" name="country">
                     <option value="" disabled selected>Select a country</option>
                     <option value="France">France</option>
                     <option value="Poland">Poland</option>
@@ -72,6 +72,8 @@
                     <option value="Germany">Germany</option>
                     <option value="Belgium">Belgium</option>
                 </select>
+                <input type="date" name="date" id="date" required>
+                <input id="attendeesInput" name="attendees" type="number" min="1" placeholder="Number of Attendees" required />
                 <button type="submit" class="addBookingButton">Add Booking</button>
             </form>
             </div>
@@ -86,6 +88,8 @@
                         <th>Surname</th>
                         <th>Location Name</th>
                         <th>Location Country</th>
+                        <th>Date</th>
+                        <th>Attendees</th>
                     </tr>
                     </thead>
                     <tbody id="booking-table-body">
