@@ -1,11 +1,15 @@
 .book-details-wrapper{
-    max-width:1500px;
+    width: 80%;
+    max-width: 2500px;
     display:flex;
     flex-direction:row;
     gap:70px;
     padding:50px;
     border: #dadada 1px solid;
     border-radius:5px;
+    margin:30px;
+}
+.booking-panel{
     margin-top:30px;
 }
 .location-main{
@@ -67,7 +71,7 @@
 .per-person{
     font-size:18px;
 }
-.booking-sidebar{
+.booking-container{
     border: #dadada 1px solid;
     border-radius:5px;
     padding-top:20px;
@@ -76,7 +80,7 @@
     margin-top:20px;
 }
 .booking-date-row{
-    margin-top:10px;
+    margin-top:20px;
 }
 #booking-date{
     margin-top:10px;
@@ -98,6 +102,7 @@
     margin-top:20px;
     margin-bottom:20px;
     width:95%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 .price-summary-row{
     display:flex;
@@ -145,10 +150,15 @@
 #customer-details-row{
     display:flex;
     flex-direction:column;
-    margin-top:10px;
     width:98%;
+    margin-top:20px;
 }
 #customer-firstName{
     margin-bottom:10px;
     width:98%;
+    margin-top:10px;
+}
+#customer-surname{
+    width:98%;
+    margin-top:10px;
 }

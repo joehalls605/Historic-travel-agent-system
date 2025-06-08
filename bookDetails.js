@@ -29,11 +29,11 @@ document.addEventListener("DOMContentLoaded", function(){
              
             </div>
 
-            <div class="booking-sidebar">
+            <div class="booking-panel">
               <p class="price">£${location.price} <span class="per-person">per person</span></p>
               <form>
                 <div class="booking-date-row">
-                    <label for="booking-date">Select Date</label>
+                    <label for="booking-date">Select Tour Date</label>
                     <br>
                     <input type="date" id="booking-date" required />
                 </div>
@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function(){
                     </select>
                 </div>
                     <div id="customer-details-row">
-                       <label for="customer-firstName">Customer Firstname</label>
+                       <label for="customer-firstName">First Name</label>
                        <input id="customer-firstName" type="text" placeholder="Please enter first name" required/>
-                       <label for="customer-surname">Customer Surname</label>
+                       <label for="customer-surname">Last Name</label>
                        <input id="customer-surname" type="text" placeholder="Please enter surname" required/>
                     </select>
                 </div>
@@ -63,10 +63,10 @@ document.addEventListener("DOMContentLoaded", function(){
                         <p id="total-price">Total Price:</p>
                         <p><strong id="total-price-figure">£${location.price}</strong></p>
                     </div>
-                  <p class="price-breakdown">1 person × £${location.price}</p>
+                  <p class="price-breakdown">1 attendee × £${location.price}</p>
                 </div>
 
-                <button type="button" class="book-button">Book This Tour</button>
+                <button type="button" class="book-button">Confirm Booking</button>
                 <div class="cancellation-policy">
                 <p>Free cancellation up to 24 hours before the tour</p>
                 </div>
