@@ -12,6 +12,26 @@
     margin:3px;
     font-size:30px;
 }
+#country-bookings-this-month{
+    display:flex;
+    flex-direction:column;
+    border: #dadada 1px solid;
+    border-radius:5px;
+    flex:1;
+    padding:20px;
+    box-shadow: 4px 4px 30px 0 rgba(236, 236, 236, 0.25);
+    margin-left:20px;
+}
+
+#country-bookings-this-month p{
+    font-size:30px;
+}
+
+#country-booking-count{
+    margin:3px;
+}
+
+
 #account-location{
     margin-top:5px;
 }
@@ -82,15 +102,26 @@
     font-family: 'Poppins-SemiBold', sans-serif;
 }
 
-#progress-bar-container{
+#bookingCountProgressBarContainer{
     width: 80%;
     background-color: #c0c0c0;
     position:relative;
     border-radius:5px;
     height: 20px;
 }
+#countryCountProgressBarContainer{
+    width: 80%;
+    background-color: #c0c0c0;
+    position:relative;
+    border-radius:5px;
+    height: 20px;
+    margin-top:70px;
+}
+#country-count-performance-summary{
+    margin-top:40px;
+}
 
-#progress-bar{
+#bookingCountProgressBar{
     width:0;
     border-radius:5px;
     height: 20px;
@@ -98,6 +129,17 @@
     position:absolute;
     transition: width 2s ease;
 }
-#performance-summary{
+#monthly-count-performance-summary{
     margin-top:40px;
 }
+#country-count-performance-summary{
+
+}
+#countryCountProgressBar{
+     width:0;
+     border-radius:5px;
+     height: 20px;
+     background-color:black;
+     position:absolute;
+     transition: width 2s ease;
+ }

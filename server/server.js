@@ -151,6 +151,7 @@ app.delete("/bookings/:id", async(req, res) => {
     }
 });
 
+// GET BOOKINGS MONTHLY COUNT
 app.get("/bookings/monthly-count", async (req, res) => {
     try{
         const startOfMonth = new Date();
@@ -169,6 +170,20 @@ app.get("/bookings/monthly-count", async (req, res) => {
         console.log("Error fetching monthly booking count:", err);
         res.status(500).send("Server Error");
     }
+})
+
+// GET BOOKINGS COUNTRY COUNT
+app.get("/bookings/country-count", async (req, res) => {
+    try{
+        const count = await Booking.countDocuments({
+            LocationCountry: "United Kingdom"
+        });
+        res.json({count});
+    }catch(err){
+        console.log("Error fetching monthly booking count:", err);
+        res.status(500).send("Server Error");
+    }
+
 })
 
 
