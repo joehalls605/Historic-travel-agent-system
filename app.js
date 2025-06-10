@@ -56,7 +56,7 @@ function displayLocations(locationsArray){
     });
 }
 
-const applyFiltersButton = document.getElementById("filterButton");
+const applyFiltersButton = document.getElementById("filter-button");
 if(applyFiltersButton){
     applyFiltersButton.addEventListener("click", applyFilters);
 }

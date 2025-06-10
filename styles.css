@@ -464,68 +464,7 @@ input:-webkit-autofill {
 
 }
 
-#bookings-performance{
-    display:flex;
-    flex:3;
-    flex-direction:column;
-    margin:20px;
-}
-#bookings{
-    display:flex;
-    flex-direction:row;
-}
 
-
-#total-bookings{
-    display:flex;
-    flex-direction:column;
-    border: #dadada 1px solid;
-    border-radius:5px;
-    flex:1;
-    padding:20px;
-    box-shadow: 4px 4px 30px 0 rgba(236, 236, 236, 0.25);
-
-}
-#total-bookings p{
-    margin:3px;
-    font-size:30px;
-}
-
-#performance{
-    display:flex;
-    flex-direction:column;
-    margin-top:20px;
-    border: #dadada 1px solid;
-    border-radius:5px;
-    height:100%;
-    padding:20px;
-    box-shadow: 4px 4px 30px 0 rgba(236, 236, 236, 0.25);
-}
-
-#agency-information{
-    width:100%;
-    display:flex;
-    flex-wrap:wrap;
-    flex-direction:column;
-    margin-top:10px;
-    margin-left:20px;
-    margin-right:20px;
-    border: #dadada 1px solid;
-    border-radius:5px;
-    padding:20px;
-    box-shadow: 4px 4px 30px 0 rgba(236, 236, 236, 0.25);
-}
-#agency-information-items{
-    flex-direction:row;
-    display:flex;
-    flex-wrap:wrap;
-}
-.information-item{
-    flex:1;
-}
-.information-item-header{
-    font-family: 'Poppins-SemiBold', sans-serif;
-}
 
 /* FONT IMPORTS */
 @font-face {
