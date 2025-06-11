@@ -35,13 +35,12 @@ async function fetchBookingsFromServer(){
 // INITIALISING THE BOOKINGS
 
 async function initialiseBookings(){
-    try{
-        console.log("Initialise bookings");
-        const userData = await fetchBookingsFromServer();
-        console.log("userData initialised", userData);
+    const loadingIndicator = document.getElementById("loading-indicator");
+    loadingIndicator.style.display = "block";
 
+    try{
+        const userData = await fetchBookingsFromServer();
         if(userData && userData.length > 0){
-            console.log("Rendering bookings with data", userData);
             renderBookings(userData);
         }else{
             console.log("No booking data available");
@@ -56,6 +55,8 @@ async function initialiseBookings(){
         }
         // If no cached data, return empty array instead of throwing an error.
         return [];
+    } finally{
+        loadingIndicator.style.display = "none";
     }
 }
 
@@ -70,7 +71,45 @@ function renderBookings(bookings){
     // Clear existing rows before rendering new ones
     tableBody.innerHTML = "";
 
+    const table = document.getElementById("booking-table");
+    const tableHeader = document.createElement("thead");
+    tableHeader.id = "booking-table-header";
+
+    const tableHeadRow = document.createElement("tr");
+    table.appendChild(tableHeader);
+    tableHeader.appendChild(tableHeadRow);
+
+    const bookingHeaderID = document.createElement("th");
+    bookingHeaderID.textContent = "Booking ID";
+    tableHeadRow.appendChild(bookingHeaderID);
+
+    const firstName = document.createElement("th");
+    firstName.textContent = "First Name";
+    tableHeadRow.appendChild(firstName);
+
+    const surname = document.createElement("th");
+    surname.textContent = "Surname";
+    tableHeadRow.appendChild(surname);
+
+    const locationName = document.createElement("th");
+    locationName.textContent = "Location Name";
+    tableHeadRow.appendChild(locationName);
+
+    const locationCountry = document.createElement("th");
+    locationCountry.textContent = "Location Country";
+    tableHeadRow.appendChild(locationCountry);
+
+    const date = document.createElement("th");
+    date.textContent = "Date";
+    tableHeadRow.appendChild(date);
+
+    const attendees = document.createElement("th");
+    date.textContent = "Attendees";
+    tableHeadRow.appendChild(attendees);
+
+
     bookings.forEach(booking => {
+
         const row = document.createElement("tr");
 
         // Create and append table cells for each booking attribute
