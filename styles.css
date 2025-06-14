@@ -530,7 +530,7 @@ input:-webkit-autofill {
         margin-top:20px;
         margin-right:10px;
         width: 95%;
-        height: 150px;
+        min-height: 40px;
     }
     .sort-filter label{
         display:none;
@@ -544,6 +544,9 @@ input:-webkit-autofill {
     }
     h1{
         font-size:1.5rem;
+    }
+    #main-content{
+        width:100%;
     }
 }
 
@@ -656,6 +659,10 @@ input:-webkit-autofill {
         flex-direction:column;
     }
     .button{
+        margin-top:20px;
+    }
+    #filter-button{
+        width:100%;
         margin-top:20px;
     }
 }

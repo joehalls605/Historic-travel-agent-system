@@ -1,6 +1,14 @@
 #booking-table-header{
     background-color: #d9d9d9;
 }
+#bookings-main-content-header{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    margin-right: 30px;
+    margin-left: 15px;
+    margin-top: 20px;
+}
 
 .price{
     margin-top:50px;
@@ -82,11 +90,14 @@ input::placeholder {
 #booking-header{
     background-color: #fbfbfb;
     padding: 15px;
+    display:flex;
+    flex-direction:column;
 }
 
 #new-booking-form{
     display:flex;
     width:100%;
+    flex-direction: row;
 }
 #new-booking-form input{
     margin-right:10px;
@@ -107,4 +118,35 @@ select{
     padding:1px;
     margin-right:10px;
 }
+
+/* MOBILE */
+@media (max-width: 600px) {
+    #booking-content {
+        padding: 0;
+        margin-top:10px;
+    }
+
+    #booking-header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #new-booking-form {
+        flex-direction: column;
+    }
+    #new-booking-form input,
+    #new-booking-form select,
+    .addBookingButton {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-top:10px;
+        box-sizing: border-box;
+    }
+    #active-bookings{
+        padding:15px;
+        margin-top:5px;
+        margin-bottom:20px;
+    }
+}
+
 

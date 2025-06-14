@@ -148,21 +148,21 @@ function handleBook(event){
     }
 }
 
-// BURGER MENU
-const burgerIcon = document.getElementById("burger-icon");
-const sidebar = document.getElementById("sidebar");
-let sidebarOpen = false;
-
-if (burgerIcon) {
-    burgerIcon.addEventListener("click", () => {
-        sidebar.classList.toggle("sidebar-open");
-        const isOpen = sidebar.classList.contains("sidebar-open");
-
-        burgerIcon.innerHTML = isOpen
-            ? '<i class="fas fa-times"></i>'
-            : '<i class="fas fa-bars"></i>';
-    });
-}
+// // BURGER MENU
+// const burgerIcon = document.getElementById("burger-icon");
+// const sidebar = document.getElementById("sidebar");
+// let sidebarOpen = false;
+//
+// if (burgerIcon) {
+//     burgerIcon.addEventListener("click", () => {
+//         sidebar.classList.toggle("sidebar-open");
+//         const isOpen = sidebar.classList.contains("sidebar-open");
+//
+//         burgerIcon.innerHTML = isOpen
+//             ? '<i class="fas fa-times"></i>'
+//             : '<i class="fas fa-bars"></i>';
+//     });
+// }
 
 
 

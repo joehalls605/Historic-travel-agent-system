@@ -35,9 +35,12 @@
     </div>
 
     <div id="main-content">
-        <div id="main-content-header">
+        <div id="bookings-main-content-header">
             <div>
                 <h1>Bookings</h1>
+            </div>
+            <div id="burger-icon">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
 
@@ -95,5 +98,9 @@
 
 <script type="module" src="app.js"></script>
 <script type="module" src="bookings.js"></script>
+<script type="module">
+    import { setupSidebarToggle} from './layout.js';
+    setupSidebarToggle();
+</script>
 </body>
 </html>
