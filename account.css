@@ -1,3 +1,12 @@
+#account-main-content-header{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    margin-right: 30px;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+
 #bookings-this-month{
     display:flex;
     flex-direction:column;
@@ -143,3 +152,14 @@
      position:absolute;
      transition: width 2s ease;
  }
+
+@media (max-width: 600px){
+    #performance{
+        min-height:260px;
+    }
+    #agency-information{
+        margin:0;
+        padding:0;
+        width:300px;
+    }
+}
