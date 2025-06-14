@@ -149,30 +149,23 @@ function handleBook(event){
 }
 
 // BURGER MENU
-const burger = document.getElementById("burger-menu");
+const burgerIcon = document.getElementById("burger-icon");
 const sidebar = document.getElementById("sidebar");
+let sidebarOpen = false;
 
-let overlay = document.createElement("div");
-overlay.id = "sidebar-overlay";
-document.body.appendChild(overlay);
+if(burgerIcon){
+    burgerIcon.addEventListener("click", () => {
+        sidebarOpen = !sidebarOpen
 
-burger.addEventListener("click", () => {
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("active");
-});
-
-overlay.addEventListener("click", () => {
-    sidebar.classList.remove("open");
-    overlay.classList.remove("active");
-});
-
-// CLOSE BUTTON
-
-const closeBtn = document.getElementById("sidebar-close");
-closeBtn.addEventListener("click", () => {
-    sidebar.classList.remove("open");
-    overlay.classList.remove("active");
-});
+        if(sidebarOpen){
+            sidebar.style.transform = "translateX(0)";
+            burgerIcon.innerHTML = '<i class="fas fa-times"></i>';
+        }else{
+            sidebar.style.transform = "translateX(-100%)";
+            burgerIcon.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+    });
+}
 
 
 

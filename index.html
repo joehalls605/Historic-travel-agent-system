@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +11,6 @@
 <body>
 <div id="application-wrapper">
     <div id="sidebar">
-        <div id="sidebar-close">
-            <i class="fas fa-times"></i>
-        </div>
         <div id="sidebar-content">
             <div id="sidebar-header">
                 <h3><a class="header-title" href="index.html">Historic Travels</a></h3>
@@ -38,9 +36,6 @@
 
     <div id="main-content">
         <div id="main-content-header">
-            <div id="burger-menu">
-                <i class="fas fa-bars"></i>
-            </div>
             <div>
                 <h1>World War Two Locations</h1>
             </div>
@@ -48,6 +43,9 @@
                 <div class="search-box">
                     <input id="searchInput" placeholder="Search locations...">
                     <button id="searchButton">Search</button>
+                </div>
+                <div id="burger-icon">
+                    <i class="fas fa-bars"></i>
                 </div>
             </div>
         </div>
@@ -57,7 +55,7 @@
             <div id="filters">
                 <div class="filter">
                     <label>Country</label>
-                    <select id="countryOptions" name="countryOptions">
+                    <select id="countryOptions">
                         <option value="All">All Countries</option>
                         <option value="France">France</option>
                         <option value="Poland">Poland</option>
@@ -71,7 +69,7 @@
                 </div>
                 <div class="filter">
                     <label>Topic</label>
-                    <select id="topicOptions" name="topicOptions">
+                    <select id="topicOptions">
                         <option value="All">Any Topic</option>
                         <option value="Battlefield">Battlefield</option>
                         <option value="Memorial">Memorial</option>
@@ -81,7 +79,7 @@
                 </div>
                 <div class="filter">
                     <label>Sort By</label>
-                    <select id="ratingOptions" name="ratingOptions">
+                    <select id="ratingOptions">
                         <option value="0">All Ratings</option>
                         <option value="4.5">4.5+ Stars</option>
                         <option value="4.7">4.7+ Stars</option>
@@ -100,7 +98,7 @@
                 <div>
                     <div class="sort-filter">
                         <label for="sortOptions">Sort By</label>
-                        <select id="sortOptions" name="sortOptions">
+                        <select id="sortOptions">
                             <option value="price-low">Price (Low to High)</option>
                             <option value="price-high">Price (High to Low)</option>
                             <option value="rating-low">Rating (Low to High)</option>
@@ -110,12 +108,12 @@
                 </div>
             </div>
 
-            <div id="displayedLocations">
-            </div>
+            <div id="displayedLocations"></div>
         </div>
     </div>
 </div>
 
+<div id="sidebar-overlay"></div>
 <script type="module" src="app.js"></script>
 </body>
 </html>
