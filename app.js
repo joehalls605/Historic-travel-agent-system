@@ -153,19 +153,17 @@ const burgerIcon = document.getElementById("burger-icon");
 const sidebar = document.getElementById("sidebar");
 let sidebarOpen = false;
 
-if(burgerIcon){
+if (burgerIcon) {
     burgerIcon.addEventListener("click", () => {
-        sidebarOpen = !sidebarOpen
+        sidebar.classList.toggle("sidebar-open");
+        const isOpen = sidebar.classList.contains("sidebar-open");
 
-        if(sidebarOpen){
-            sidebar.style.transform = "translateX(0)";
-            burgerIcon.innerHTML = '<i class="fas fa-times"></i>';
-        }else{
-            sidebar.style.transform = "translateX(-100%)";
-            burgerIcon.innerHTML = '<i class="fas fa-bars"></i>';
-        }
+        burgerIcon.innerHTML = isOpen
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
     });
 }
+
 
 
 

@@ -152,7 +152,6 @@ li a:hover{
 #main-content {
     flex: 1;
     padding: 15px;
-    margin-left: 230px;
     box-sizing: border-box;
 }
 
@@ -394,7 +393,6 @@ input:-webkit-autofill {
 }
 
 #search{
-    margin-left: 40px;
     display:flex;
     flex-direction:row;
 }
@@ -483,7 +481,8 @@ input:-webkit-autofill {
 #burger-icon {
     display: none;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 20px;
+    width: 30px;
     margin-left:15px;
 
 }
@@ -496,14 +495,27 @@ input:-webkit-autofill {
 
 /* Phones */
 @media (max-width: 600px) {
+    #burger-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    #sidebar.sidebar-open {
+        transform: translateX(0);
+    }
     #displayedLocations{
         grid-template-columns:1fr;
     }
-    #filters-container, #main-content-header, #filters{
+    #filters-container, #filters{
         flex-direction:column;
     }
     #searchInput, #searchButton{
-        margin-top: 20px;
+        margin-top: 0;
     }
     #filters-container{
         margin-top:10px;
@@ -523,10 +535,20 @@ input:-webkit-autofill {
     .sort-filter label{
         display:none;
     }
+    #main-content-header{
+        display:flex;
+        flex-direction: column;
+    }
+    #search{
+        margin-top:20px;
+    }
+    h1{
+        font-size:1.5rem;
+    }
 }
 
 /* Tablets */
-@media (max-width:900px){
+@media (min-width: 601px) and (max-width:900px){
     #displayedLocations{
         grid-template-columns:repeat(2, 1fr);
         margin-bottom:30px;
@@ -534,45 +556,27 @@ input:-webkit-autofill {
     h1{
         font-size:20px;
     }
-    #sidebar{
-        transform:translateX(-100%);
-        transition:transform 0.3s ease;
-        position:fixed;
-        top:0;
-        left:0;
-        width:200px;
-        z-index:999;
-    }
-    #main-content {
-        margin-left: 0;
-        padding-left: 25px;
-    }
-    #main-content-header{
-        margin-top:20px;
-        margin-left:0;
-        margin-right:0;
-    }
-    #burger-icon {
-        display: block;
-    }
     #sidebar {
-        transition: transform 0.3s ease;
-    }
-}
-
-@media (max-width: 768px){
-    #sidebar{
-        transform: translateX(-20%);
+        transform: translateX(-100%);
         transition: transform 0.3s ease;
         position: fixed;
-        left:0;
-        top:0;
-        height:100%;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100%;
         background-color: white;
-        width: 50px;
-        z-index: 997;
-        overflow-x: hidden;
+        z-index: 999;
+        overflow-y: auto;
     }
+    #sidebar.sidebar-open {
+        transform: translateX(0);
+    }
+    #burger-icon {
+        display: flex;
+        align-items:center;
+        justify-content:center;
+    }
+
     #sidebar-content{
         align-items: center; /* Center content horizontally in the collapsed state */
     }
@@ -590,30 +594,53 @@ input:-webkit-autofill {
         padding: 10px 10px;
         justify-content: center;
     }
-    #agent {
-        display: none;
+    #main-content {
+        margin-left: 0;
+        padding-left: 25px;
+    }
+    #main-content-header{
+        margin-top:20px;
+        margin-left:0;
+        margin-right:0;
+        display: flex;
+        flex-direction: row;
+    }
+    #searchInput{
+        margin-top:0;
+    }
+    #searchButton{
+        margin-top:0;
+    }
+    #search{
+    margin-top:20px;
+    display:flex;
+    flex-direction:row;
+    }
+    #filters-container h3{
+        margin:10px;
     }
     #main-content{
-        margin-left:25px;
         width:100%;
+        display:flex;
     }
     #main-content-header{
         display:flex;
-        flex-direction:column;
-    }
-    #displaySection{
-        flex-direction:column;
-    }
-    #search{
-        margin:0;
-        display:flex;
         flex-direction:row;
     }
+    #displayedLocationsValue{
+        font-size:13px;
+    }
+    #agent {
+        display: none;
+    }
     #displaySection{
-    width:100%;
+        flex-direction:column;
+    }
+    #displaySection{
+        width:100%;
     }
     #displayedLocations{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
     #main-content{
         display:flex;
@@ -622,6 +649,7 @@ input:-webkit-autofill {
     #filters-container{
         display:flex;
         flex-direction:column;
+        width:100%;
     }
     #filters{
         display:flex;
@@ -630,6 +658,10 @@ input:-webkit-autofill {
     .button{
         margin-top:20px;
     }
+}
+
+@media (max-width: 768px){
+
 }
 
 
