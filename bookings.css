@@ -136,11 +136,10 @@ select{
     }
     #new-booking-form input,
     #new-booking-form select,
-    .addBookingButton {
+    #new-booking-form .addBookingButton {
         width: 100%;
-        margin-bottom: 10px;
-        margin-top:10px;
         box-sizing: border-box;
+        margin-bottom: 10px;
     }
     #active-bookings{
         padding:15px;
@@ -157,7 +156,8 @@ select{
     }
     #booking-content{
         margin-top:10px;
-        padding-left:0;
+        padding:30px;
+        padding-top:10px;
     }
     #new-booking-form{
         display:flex;
@@ -166,7 +166,7 @@ select{
     #new-booking-form input,
     #new-booking-form select,
     #new-booking-form .addBookingButton {
-        width: 100%;
+        width: 80%;
         box-sizing: border-box;
         margin-bottom: 10px;
     }
@@ -176,6 +176,10 @@ select{
     }
     .addBookingButton{
         width:100%;
+    }
+    #bookings-main-content-header{
+        padding-left:10px;
+        padding-right:10px;
     }
 }
 
