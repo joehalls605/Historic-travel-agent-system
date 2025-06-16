@@ -148,5 +148,35 @@ select{
         margin-bottom:20px;
     }
 }
+/* TABLET */
+@media (min-width: 601px) and (max-width:900px){
+    #booking-header{
+        display:flex;
+        flex-direction:column;
+        padding:0;
+    }
+    #booking-content{
+        margin-top:10px;
+        padding-left:0;
+    }
+    #new-booking-form{
+        display:flex;
+        flex-direction:column;
+    }
+    #new-booking-form input,
+    #new-booking-form select,
+    #new-booking-form .addBookingButton {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+    #firstNameInput, #surnameInput, #locationSelect, #countrySelect, #date, #attendeesInput {
+        width:100%;
+        margin-right:0;
+    }
+    .addBookingButton{
+        width:100%;
+    }
+}
 
 

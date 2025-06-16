@@ -85,6 +85,9 @@
     padding:20px;
     box-shadow: 4px 4px 30px 0 rgba(236, 236, 236, 0.25);
 }
+#performance-header{
+    margin-bottom:20px;
+}
 
 #agency-information{
     width:100%;
@@ -111,17 +114,15 @@
     font-family: 'Poppins-SemiBold', sans-serif;
 }
 
-#bookingCountProgressBarContainer{
+#bookingCountProgress{
     width: 80%;
     background-color: #c0c0c0;
-    position:relative;
     border-radius:5px;
     height: 20px;
 }
-#countryCountProgressBarContainer{
+#countryCountProgress{
     width: 80%;
     background-color: #c0c0c0;
-    position:relative;
     border-radius:5px;
     height: 20px;
     margin-top:70px;
@@ -174,10 +175,14 @@
         box-sizing: border-box;
     }
     #agency-information{
-        margin-top:20px;
+        margin-bottom:50px;
+        margin-top:0;
     }
     #profile{
         margin-bottom:0;
+    }
+    #profile h3{
+        margin: 0;
     }
     #information-item{
         max-width:350px;
@@ -189,6 +194,20 @@
         font-size:0.9rem;
     }
 }
-@media (min-width: 768px) and (max-width: 102px){
 
+/* TABLET */
+
+@media (min-width: 601px) and (max-width:900px){
+ #country-count-performance-summary{
+     margin-top:30px;
+ }
+ h3{
+     margin:0;
+ }
+ #agency-information{
+     font-size:0.8rem;
+ }
+ #application-wrapper{
+     height:100%;
+ }
 }
