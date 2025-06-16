@@ -665,6 +665,9 @@ input:-webkit-autofill {
         width:100%;
         margin-top:20px;
     }
+    #bookings-performance{
+        width:100%;
+    }
 }
 
 @media (max-width: 768px){
