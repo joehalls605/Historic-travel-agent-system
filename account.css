@@ -140,9 +140,10 @@
 }
 #monthly-count-performance-summary{
     margin-top:40px;
+    font-size:14px;
 }
 #country-count-performance-summary{
-
+    font-size:14px;
 }
 #countryCountProgressBar{
      width:0;
@@ -187,4 +188,7 @@
     #agency-information p{
         font-size:0.9rem;
     }
+}
+@media (min-width: 768px) and (max-width: 102px){
+
 }
