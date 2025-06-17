@@ -4,7 +4,7 @@ console.log("bookings.js file loaded");
 
 async function fetchBookingsFromServer(){
     try{
-        const response = await fetch("http://localhost:5000/bookings");
+        const response = await fetch("/bookings");
 
         if(!response.ok){
             const cachedData = localStorage.getItem("userData");
@@ -167,7 +167,7 @@ async function deleteBooking(bookingId){
             throw new Error("Booking ID is required");
         }
 
-        const response = await fetch(`http://localhost:5000/bookings/${bookingId}`, {
+        const response = await fetch(`/bookings${bookingId}`, {
             method: 'DELETE',
         });
 
