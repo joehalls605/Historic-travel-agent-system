@@ -604,10 +604,7 @@ input:-webkit-autofill {
         padding:0;
     }
     #sidebar-header h3{
-        display: none; /* Hide the title in collapsed state */
-    }
-    #sidebar-links span {
-        display: none; /* Hide the text labels in collapsed state */
+        display: none;
     }
     #sidebar-links li a {
         padding: 10px 10px;

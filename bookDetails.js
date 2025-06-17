@@ -1,3 +1,5 @@
+import { setupSidebarToggle } from './layout.js';
+
 document.addEventListener("DOMContentLoaded", function(){
     const locationDataString = localStorage.getItem("selectedLocation");
 
@@ -8,6 +10,11 @@ document.addEventListener("DOMContentLoaded", function(){
         if(mainContent){
             mainContent.innerHTML = `
         <div class="book-details-wrapper">
+        <div id="book-details-header">
+               <div id="burger-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+        </div>
           <div class="location-main">
             <div class="location-image-placeholder">
               <span class="badge">${location.topic || "Museum"}</span>
@@ -75,7 +82,9 @@ document.addEventListener("DOMContentLoaded", function(){
           </div>
         </div>
       `;
+
             // Dynamic price update logic
+            setupSidebarToggle();
 
             const price = location.price;
             const attendeesSelect = document.getElementById("booking-attendees");
