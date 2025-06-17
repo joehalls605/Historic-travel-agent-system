@@ -198,13 +198,8 @@ const publicPath = path.join(__dirname, '../public');
 app.use(express.static(publicPath));
 
 // Fallback: send index.html for any unmatched route
-// Catch unmatched routes that do NOT have file extensions (e.g., "/dashboard")
-app.get('*', (req, res) => {
-    if (!req.path.includes('.') && !req.path.startsWith('/api')) {
-        res.sendFile(path.join(publicPath, 'index.html'));
-    } else {
-        res.status(404).send('Not Found');
-    }
+app.use((req, res, next) => {
+    res.sendFile(path.join(publicPath, 'index.html'));
 });
 
 
