@@ -198,7 +198,7 @@ const publicPath = path.join(__dirname, '../public');
 app.use(express.static(publicPath));
 
 // Fallback: send index.html for any unmatched route
-app.get('/*', (req, res) => {
+app.use((req, res, next) => {
     res.sendFile(path.join(publicPath, 'index.html'));
 });
 
