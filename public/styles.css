@@ -1,19 +1,19 @@
 /* FONT IMPORTS */
 @font-face {
     font-family: 'Poppins-Regular';
-    src: url('/public/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    src: url('fonts/Poppins/Poppins-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Poppins-Light';
-    src: url('/public/fonts/Poppins/Poppins-Light.ttf') format('truetype');
+    src: url('fonts/Poppins/Poppins-Light.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Poppins-SemiBold';
-    src: url('/public/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+    src: url('fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
