@@ -193,13 +193,15 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Serve files from public folder
-app.use(express.static(path.join(__dirname, '..')));
+// Serve static files from the public directory (one level up from server/)
+const publicPath = path.join(__dirname, '../public');
+app.use(express.static(publicPath));
 
-// Fallback: send index.html for unmatched routes (for SPA routing support)
-app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public', 'index.html'));
+// Fallback: send index.html for any unmatched route
+app.get('*', (req, res) => {
+    res.sendFile(path.join(publicPath, 'index.html'));
 });
+
 
 
 // =================== SERVER STARTUP ===================
