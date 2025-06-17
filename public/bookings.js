@@ -205,7 +205,7 @@ document.getElementById("new-booking-form").addEventListener("submit",  async fu
 
     try{
         // SEND POST request to the server
-        const response = await fetch("http://localhost:5000/bookings", {
+        const response = await fetch("/bookings", {
             method: "POST",
             headers:{
                 "Content-Type": "application/json"
