@@ -512,6 +512,7 @@ input:-webkit-autofill {
 
     #sidebar.sidebar-open {
         transform: translateX(0);
+        z-index: 10000;
     }
     #displayedLocations{
         grid-template-columns:1fr;
