@@ -54,16 +54,21 @@ h3{
     border-right: #bbbbbb 1px solid;
     width: 200px;
     position:fixed;
-    height:100%;
+    top: 0;
+    left: 0;
+    height:100vh;
     background-color:white;
     overflow-y: auto;
+    box-sizing: border-box;
 }
 
 #sidebar-content{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     height: 100%;
     box-sizing: border-box;
+    padding-bottom: 20px;
 }
 
 #sidebar-header{
@@ -132,13 +137,13 @@ li a:hover{
     border-top:#bbbbbb 1px solid;
     display:flex;
     flex-direction:row;
-    flex:1;
-    padding-left:15px;
+    padding: 15px;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
-#agent-details{
-    margin-left:10px;
-    justify-content:center;
-    align-content:center;
+#agent-details {
+    margin-left: 10px;
 }
 #agent-icon{
     justify-content:center;

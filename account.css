@@ -160,9 +160,26 @@
  }
 /* MOBILE */
 @media (max-width: 600px){
+    #bookings {
+        flex-direction: column;
+        width:100%;
+        box-sizing:border-box;
+    }
+    #bookings-this-month,
+    #country-bookings-this-month {
+        width: 100%;
+        margin: 0 0 15px 0;
+        box-sizing:border-box;
+    }
+
+    #country-bookings-this-month {
+        margin-left: 0;
+        box-sizing:border-box;
+    }
     #performance{
         min-height:260px;
         max-width:400px;
+        margin-top:0px;
     }
     #agency-information-items{
         flex-direction:column;

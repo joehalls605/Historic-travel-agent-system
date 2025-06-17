@@ -162,6 +162,38 @@
     width:98%;
     margin-top:10px;
 }
+/* MOBILE */
+@media (max-width:400px){
+    .book-details-wrapper{
+        flex-direction: column;
+        width: 100%;
+        padding: 16px;
+        gap: 30px;
+        box-sizing: border-box;
+        margin:0;
+    }
+    .location-image-placeholder{
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .location-image-placeholder img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .badge{
+        right: 10px;
+        top: 10px;
+        font-size: 0.7rem;
+    }
+    #main-content{
+
+    }
+}
+
+
+
 
 /* TABLET */
 @media (min-width: 601px) and (max-width:900px){
