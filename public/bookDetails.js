@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function(){
         console.log("Submitting booking from bookDetails.js", newBooking);
 
         try{
-            const response = await fetch("http://localhost:5000/bookings", {
+            const response = await fetch("/bookings", {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(newBooking)
