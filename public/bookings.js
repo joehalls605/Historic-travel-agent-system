@@ -136,11 +136,10 @@ function renderBookings(bookings){
         // Add delete icon
         const deleteButton = document.createElement("i");
         deleteButton.classList.add("fa", "fa-trash", "deleteButton");
+        deleteButton.style.cursor = "pointer";
         deleteButton.addEventListener("click", () => deleteBooking(booking._id));
 
-        const deleteCell = document.createElement("td");
-        deleteCell.appendChild(deleteButton);
-        row.appendChild(deleteCell);
+        row.appendChild(deleteButton);
 
         tableBody.appendChild(row);
     });
@@ -155,7 +154,7 @@ async function deleteBooking(bookingId){
             throw new Error("Booking ID is required");
         }
 
-        const response = await fetch(`/bookings${bookingId}`, {
+        const response = await fetch(`/bookings/${bookingId}`, {
             method: 'DELETE',
         });
 
