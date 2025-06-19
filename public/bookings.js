@@ -66,53 +66,38 @@ document.addEventListener("DOMContentLoaded", initialiseBookings);
 
 function renderBookings(bookings){
     console.log("Render function called");
-    const tableBody = document.getElementById("booking-table-body");
-
-    // Clear existing rows before rendering new ones
-    tableBody.innerHTML = "";
 
     const table = document.getElementById("booking-table");
+    const tableBody = document.getElementById("booking-table-body");
+
+    // Clear existing rows
+    tableBody.innerHTML = "";
+
+    // Remove existing header if it exists
+    const existingHeader = document.getElementById("booking-table-header");
+    if (existingHeader) {
+        existingHeader.remove();
+    }
+
+    // Create and insert new table header
     const tableHeader = document.createElement("thead");
     tableHeader.id = "booking-table-header";
-
     const tableHeadRow = document.createElement("tr");
-    table.appendChild(tableHeader);
+
+    const headers = ["Booking ID", "First Name", "Surname", "Location Name", "Location Country", "Date", "Attendees"];
+    headers.forEach(headerText => {
+        const th = document.createElement("th");
+        th.textContent = headerText;
+        tableHeadRow.appendChild(th);
+    });
+
     tableHeader.appendChild(tableHeadRow);
+    table.insertBefore(tableHeader, tableBody); // ✅ Ensure header goes before body
 
-    const bookingHeaderID = document.createElement("th");
-    bookingHeaderID.textContent = "Booking ID";
-    tableHeadRow.appendChild(bookingHeaderID);
-
-    const firstName = document.createElement("th");
-    firstName.textContent = "First Name";
-    tableHeadRow.appendChild(firstName);
-
-    const surname = document.createElement("th");
-    surname.textContent = "Surname";
-    tableHeadRow.appendChild(surname);
-
-    const locationName = document.createElement("th");
-    locationName.textContent = "Location Name";
-    tableHeadRow.appendChild(locationName);
-
-    const locationCountry = document.createElement("th");
-    locationCountry.textContent = "Location Country";
-    tableHeadRow.appendChild(locationCountry);
-
-    const date = document.createElement("th");
-    date.textContent = "Date";
-    tableHeadRow.appendChild(date);
-
-    const attendees = document.createElement("th");
-    date.textContent = "Attendees";
-    tableHeadRow.appendChild(attendees);
-
-
+    // Render each booking row
     bookings.forEach(booking => {
-
         const row = document.createElement("tr");
 
-        // Create and append table cells for each booking attribute
         const bookingIdCell = document.createElement("td");
         bookingIdCell.textContent = booking.bookingId;
         row.appendChild(bookingIdCell);
@@ -125,37 +110,40 @@ function renderBookings(bookings){
         surnameCell.textContent = booking.surname;
         row.appendChild(surnameCell);
 
-        const locationName = document.createElement("td");
-        locationName.textContent = booking.LocationName;
-        row.appendChild(locationName);
+        const locationNameCell = document.createElement("td");
+        locationNameCell.textContent = booking.LocationName;
+        row.appendChild(locationNameCell);
 
-        const locationCountry = document.createElement("td");
-        locationCountry.textContent = booking.LocationCountry;
-        row.appendChild(locationCountry);
+        const locationCountryCell = document.createElement("td");
+        locationCountryCell.textContent = booking.LocationCountry;
+        row.appendChild(locationCountryCell);
 
-        const date = document.createElement("td");
-        const dateObj = new Date(booking.bookingDate); // Creating a JavaScript date object
-        date.textContent = isNaN(dateObj.getTime())
-            ? "Invalid Date" // If the date is invalid
-            : dateObj.toLocaleDateString("en-GB", { // if valid, turn into UK format
-                day:"2-digit",
-                month:"2-digit",
-                year:"numeric"
+        const dateCell = document.createElement("td");
+        const dateObj = new Date(booking.bookingDate);
+        dateCell.textContent = isNaN(dateObj.getTime())
+            ? "Invalid Date"
+            : dateObj.toLocaleDateString("en-GB", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric"
             });
-        row.appendChild(date);
+        row.appendChild(dateCell);
 
-        const attendees = document.createElement("td");
-        attendees.textContent = booking.attendees;
-        row.appendChild(attendees);
+        const attendeesCell = document.createElement("td");
+        attendeesCell.textContent = booking.attendees;
+        row.appendChild(attendeesCell);
 
+        // Add delete icon
         const deleteButton = document.createElement("i");
-        deleteButton.classList.add("fa", "fa-trash");
-        deleteButton.classList.add("deleteButton");
+        deleteButton.classList.add("fa", "fa-trash", "deleteButton");
         deleteButton.addEventListener("click", () => deleteBooking(booking._id));
 
-        row.appendChild(deleteButton);
+        const deleteCell = document.createElement("td");
+        deleteCell.appendChild(deleteButton);
+        row.appendChild(deleteCell);
+
         tableBody.appendChild(row);
-    })
+    });
 }
 
 async function deleteBooking(bookingId){
