@@ -1,8 +1,7 @@
 console.log("bookings.js file loaded");
 
-// FETCHING THE BOOKINGS FROM THE SERVER FIRST.
-
-async function fetchBookingsFromServer(){
+// FETCH BOOKINGS FROM THE SERVER
+async function fetchBookingsFromServer(){ // Data fetching (backend)
     try{
         const response = await fetch("/bookings");
 
@@ -33,21 +32,21 @@ async function fetchBookingsFromServer(){
 }
 
 // INITIALISING THE BOOKINGS
-
-async function initialiseBookings(){
+async function initialiseBookings(){ // Page setup (frontend/UI)
     const loadingIndicator = document.getElementById("loading-indicator");
     loadingIndicator.style.display = "block";
 
     try{
-        const userData = await fetchBookingsFromServer();
+        const userData = await fetchBookingsFromServer(); // Try to get data from server (or cache)
         if(userData && userData.length > 0){
-            renderBookings(userData);
+            renderBookings(userData); // If data exists, render it in the table
         }else{
             console.log("No booking data available");
         }
     }catch(error){
         console.log("Error initialising bookings", error);
-        const cachedData = localStorage.getItem("userData");
+
+        const cachedData = localStorage.getItem("userData"); // Try loading for cache if server fails
         if(cachedData){
             console.log("Using cached bookings data after error");
             const parsedData = JSON.parse(cachedData);
@@ -63,7 +62,6 @@ async function initialiseBookings(){
 document.addEventListener("DOMContentLoaded", initialiseBookings);
 
 // RENDER BOOKINGS
-
 function renderBookings(bookings){
     console.log("Render function called");
 
@@ -164,6 +162,7 @@ async function deleteBooking(bookingId){
 
         const result = await response.json();
         console.log("Booking deleted successfully:", result);
+
         const tableBody = document.getElementById("booking-table-body");
         tableBody.innerHTML = "";
         initialiseBookings();
