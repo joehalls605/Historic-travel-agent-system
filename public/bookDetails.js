@@ -63,8 +63,6 @@ document.addEventListener("DOMContentLoaded", function(){
                        <input id="customer-surname" type="text" placeholder="Please enter surname" required/>
                     </select>
                 </div>
-                
-
                 <div class="price-summary">
                     <div class="price-summary-row">
                         <p id="total-price">Total Price:</p>
@@ -72,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function(){
                     </div>
                   <p class="price-breakdown">1 attendee × £${location.price}</p>
                 </div>
-
                 <button type="button" class="book-button">Confirm Booking</button>
                 <div class="cancellation-policy">
                 <p>Free cancellation up to 24 hours before the tour</p>
@@ -80,18 +77,17 @@ document.addEventListener("DOMContentLoaded", function(){
               </form>
             </div>
           </div>
-        </div>
-      `;
+        </div>`;
 
-            // Dynamic price update logic
-            setupSidebarToggle();
+        // Dynamic price update logic
+        setupSidebarToggle();
 
-            const price = location.price;
-            const attendeesSelect = document.getElementById("booking-attendees");
-            const totalPriceDisplay = document.getElementById("total-price-figure");
+        const price = location.price;
+        const attendeesSelect = document.getElementById("booking-attendees");
+        const totalPriceDisplay = document.getElementById("total-price-figure");
 
-            attendeesSelect.addEventListener("change", () => {
-                const attendees = parseInt(attendeesSelect.value);
+        attendeesSelect.addEventListener("change", () => {
+            const attendees = parseInt(attendeesSelect.value);
                 if(price === 0){
                     totalPriceDisplay.textContent = "Free";
                 }
@@ -132,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function(){
         console.log("Submitting booking from bookDetails.js", newBooking);
 
         try{
-            const response = await fetch("/bookings", {
+            const response = await fetch("http://localhost:5000/bookings", {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(newBooking)

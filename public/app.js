@@ -3,6 +3,7 @@ import locationData from './location-data.js';
 // Global variable to track the current displayed list
 let currentDisplayedLocations = locationData.locations.slice();
 
+// DOM ELEMENTS
 const displayedLocations = document.getElementById("displayedLocations");
 const countryOptions = document.getElementById("countryOptions");
 const topicOptions = document.getElementById("topicOptions");
@@ -12,6 +13,7 @@ const searchButton = document.getElementById("searchButton");
 const sortOptions = document.getElementById("sortOptions");
 const displayedLocationsValue = document.getElementById("displayedLocationsValue");
 
+// DOM CONTENTLOADED
 document.addEventListener("DOMContentLoaded", function(){
     if(displayedLocations){
         displayLocations(locationData.locations);
@@ -23,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 })
 
+// DISPLAY LOCATIONS
 function displayLocations(locationsArray){
     displayedLocations.innerHTML = "";
-
 
     locationsArray.forEach(item => {
         const locationDiv = document.createElement("div");
@@ -56,17 +58,18 @@ function displayLocations(locationsArray){
     });
 }
 
+// APPLY FILTERS BUTTON
 const applyFiltersButton = document.getElementById("filter-button");
 if(applyFiltersButton){
     applyFiltersButton.addEventListener("click", applyFilters);
 }
-
 function applyFilters(){
     const filteredLocations = filterLocations();
     currentDisplayedLocations = filteredLocations;
     displayLocations(filteredLocations);
 }
 
+// FILTER LOCATIONS
 function filterLocations(){
     const selectedCountry = countryOptions.value;
     const selectedTopic = topicOptions.value;
@@ -86,10 +89,10 @@ function filterLocations(){
     });
 }
 
+// SEARCH INPUT
 if(searchButton){
     searchButton.addEventListener("click", search);
 }
-
 function search(){
     const searchTerm = searchInput.value;
     const searchResults = locationData.locations.filter(function(item){
@@ -103,6 +106,7 @@ function search(){
     displayLocations(searchResults);
 }
 
+// SORT DROPDOWN
 if(sortOptions){
     sortOptions.addEventListener("change", sort);
 }
@@ -126,18 +130,17 @@ function sort(){
     displayLocations(sortedLocations);
 }
 
+// LOCATIONS DISPLAY TOTAL
 function locationsDisplayedTotal(){
     return currentDisplayedLocations.length;
 }
 
-// CARD BUTTON LOGIC
-
+// CARD BUTTON
 document.addEventListener("click", function(event){
     if(event.target && event.target.classList.contains("card-button")){
         handleBook(event);
     }
 });
-
 function handleBook(event){
     const card = event.target.closest(".location-card");
     const locationName = card.querySelector("h3").textContent;
