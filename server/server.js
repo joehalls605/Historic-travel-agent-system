@@ -14,7 +14,7 @@ dotenv.config();
 console.log("MONGO_URI value:", process.env.MONGO_URI); // Log the MongoDB URI to check its value
 
 // Express app instance created
-const app = express();  // Initialize an Express app to handle HTTP requests and routes
+const app = express();  // Initialise an Express app to handle HTTP requests and routes
 
 // Middleware
 app.use(express.json()); // Middleware to automatically parse incoming JSON request bodies
@@ -186,21 +186,20 @@ app.get("/bookings/country-count", async (req, res) => {
 
 })
 
-// Server static frontend files
-// import path from 'path';
-// import { fileURLToPath } from 'url';
-//
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-//
-// // Serve static files from the public directory (one level up from server/)
-// const publicPath = path.join(__dirname, '../public');
-// app.use(express.static(publicPath));
-//
-// // Fallback: send index.html for any unmatched route
-// app.use((req, res, next) => {
-//     res.sendFile(path.join(publicPath, 'index.html'));
-// });
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve static files from the public directory (one level up from server/)
+const publicPath = path.join(__dirname, '../public');
+app.use(express.static(publicPath));
+
+// Fallback: send index.html for any unmatched route
+app.use((req, res, next) => {
+    res.sendFile(path.join(publicPath, 'index.html'));
+});
 
 
 

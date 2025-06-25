@@ -3,7 +3,7 @@ console.log("bookings.js file loaded");
 // FETCH BOOKINGS FROM THE SERVER
 async function fetchBookingsFromServer(){ // Data fetching (backend)
     try{
-        const response = await fetch("/bookings");
+        const response = await fetch("http://localhost:5000/bookings");
 
         if(!response.ok){
             const cachedData = localStorage.getItem("userData");
@@ -152,7 +152,7 @@ async function deleteBooking(bookingId){
             throw new Error("Booking ID is required");
         }
 
-        const response = await fetch(`/bookings/${bookingId}`, {
+        const response = await fetch(`http://localhost:5000/bookings/${bookingId}`, {
             method: 'DELETE',
         });
 
@@ -191,7 +191,7 @@ document.getElementById("new-booking-form").addEventListener("submit",  async fu
 
     try{
         // SEND POST request to the server
-        const response = await fetch("/bookings", {
+        const response = await fetch("http://localhost:5000/bookings", {
             method: "POST",
             headers:{
                 "Content-Type": "application/json"

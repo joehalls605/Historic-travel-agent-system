@@ -212,12 +212,12 @@ li a:hover{
     color: white;
     border-radius: 4px;
     transition: background-color 0.3s ease;
-    /*flex: 1;*/
-    height:40px;
+    flex: 1;
+    height:50px;
 }
 
 .filter select{
-    height:40px;
+    height:50px;
 }
 
 select{
@@ -543,6 +543,7 @@ input:-webkit-autofill {
         margin-right:10px;
         width: 95%;
         min-height: 40px;
+
     }
     .sort-filter label{
         display:none;
