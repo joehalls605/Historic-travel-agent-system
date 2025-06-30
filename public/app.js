@@ -13,7 +13,7 @@ const searchButton = document.getElementById("searchButton");
 const sortOptions = document.getElementById("sortOptions");
 const displayedLocationsValue = document.getElementById("displayedLocationsValue");
 
-// DOM CONTENTLOADED
+// DOM CONTENT LOADED
 document.addEventListener("DOMContentLoaded", function(){
     if(displayedLocations){
         displayLocations(locationData.locations);

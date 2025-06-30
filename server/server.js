@@ -1,11 +1,11 @@
 // this is the backend server.js that handles the ongoing API operations
 
 // =================== IMPORTS ===================
-import mongoose from 'mongoose'; // Import mongoose to interact with MongoDB
-import express from 'express'; // Import express to create an API server
-import dotenv from 'dotenv'; // Import dotenv to manage environment variables
-import cors from 'cors'; // Import cors to enable cross-origin requests
-import { v4 as uuidv4 } from 'uuid';
+import mongoose from 'mongoose'; // mongoose to interact with MongoDB
+import express from 'express'; // express to create an API server
+import dotenv from 'dotenv'; // to manage environment variables
+import cors from 'cors'; // cors to enable cross-origin requests
+import { v4 as uuidv4 } from 'uuid'; // unique id generator  library
 
 // =================== CONFIGURATION ===================
 
@@ -32,7 +32,7 @@ mongoose.connect(uri, {
     console.error("MongoDB connection error:", err);
 });
 
-// Connecting to MongoDB
+// Connected to MongoDB
 mongoose.connection.on("connected", () => {
     // Log a message when successfully connected to MongoDB
     console.log(`Mongoose connected to ${mongoose.connection.db.databaseName}`);
@@ -72,17 +72,17 @@ const bookingSchema = {
     }
 }
 
-// Create a Booking model to interact with the 'bookings' collection in the database
+// Create a Booking model to interact with the 'HistoryCollection' collection in the database
 const Booking = mongoose.model("Booking", bookingSchema, "HistoryCollection");
 
 // The front end request triggers this async
 
-// GET BOOKINGS: Route to fetch all bookings from the database
+// GET BOOKINGS
 app.get("/bookings", async(req, res) => {
     try {
-        console.log("Database connection state:", mongoose.connection.readyState); // Log the database connection state
-        console.log("Database name:", mongoose.connection.db.databaseName); // Log the name of the connected database
-        console.log("Fetching bookings from collection 'bookings'..."); // Log a message indicating the fetch operation
+        console.log("Database connection state:", mongoose.connection.readyState);
+        console.log("Database name:", mongoose.connection.db.databaseName);
+        console.log("Fetching bookings from collection 'bookings'...");
 
         // List all collections in the database to verify that 'bookings' exists
         const collections = await mongoose.connection.db.listCollections().toArray();
@@ -93,15 +93,15 @@ app.get("/bookings", async(req, res) => {
         // Send the bookings as JSON in the response
         res.json(bookings);
     } catch (err) {
-        console.error("Error fetching bookings:", err); // Log any error that occurs
-        res.status(500).send("Server Error"); // Send a 500 server error response in case of failure
+        console.error("Error fetching bookings:", err)
+        res.status(500).send("Server Error");
     }
 });
 
-// POST HERE
+// POST BOOKINGS
 app.post("/bookings", async(req, res) => {
     try{
-        // Destructuring (pull out) the data from req body so I can use the variables
+        // Destructuring the data from req body so I can use the variables
         const {firstName, surname, location, country, bookingDate, attendees} = req.body;
 
         // Checking if fields are present
@@ -131,7 +131,6 @@ app.post("/bookings", async(req, res) => {
 });
 
 // DELETE
-
 app.delete("/bookings/:id", async(req, res) => {
     try {
         const bookingId = req.params.id;
@@ -200,7 +199,6 @@ app.use(express.static(publicPath));
 app.use((req, res, next) => {
     res.sendFile(path.join(publicPath, 'index.html'));
 });
-
 
 
 // =================== SERVER STARTUP ===================
