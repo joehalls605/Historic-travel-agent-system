@@ -83,7 +83,7 @@ function updateAccountUI(monthlyCountData, countryBookingCountData){
     bookingCountProgressBar.style.width = monthlyCountPercentage + "%";
 
     const monthlyCountSummaryElement = document.getElementById("monthly-count-performance-summary");
-    monthlyCountSummaryElement.textContent = `${monthlyCountValue} / ${max} monthly bookings toward monthly goal`;
+    monthlyCountSummaryElement.textContent = `${monthlyCountValue} / ${max} bookings toward monthly goal`;
 
     // UK PROGRESS BAR
     let countryMin = 0;
@@ -95,6 +95,5 @@ function updateAccountUI(monthlyCountData, countryBookingCountData){
     countryCountProgressBar.style.width = monthlyCountryCountPercentage + "%";
 
     const countryCountSummaryElement = document.getElementById("country-count-performance-summary");
-    // Fixed: should use countryCountValue instead of monthlyCountValue
-    countryCountSummaryElement.textContent = `${countryCountValue} / ${countryMax} monthly bookings toward monthly goal`;
+    countryCountSummaryElement.textContent = `${countryCountValue} / ${countryMax} UK bookings toward monthly goal`;
 }

@@ -24,7 +24,7 @@ const locations = {
       "rating": 4.8,
       "year": 1940,
       "significance": "The largest of the Nazi concentration camps and extermination centers",
-      "details": "A complex of over 40 concentration and extermination camps."
+      "details": "A complex of over 40 concentration and extermination camps..."
     },
     {
       "id": 3,
@@ -50,7 +50,7 @@ const locations = {
       "rating": 4.8,
       "year": 1939,
       "significance": "The secret underground headquarters for the British government during WWII",
-      "details": "The Churchill War Rooms is a museum in London and one of the five branches of the Imperial War Museum..."
+      "details": "The Churchill War Rooms is one of the five branches of the Imperial War Museum..."
     },
     {
       "id": 5,

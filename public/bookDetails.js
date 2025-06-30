@@ -2,8 +2,8 @@ import { setupSidebarToggle } from './layout.js';
 
 document.addEventListener("DOMContentLoaded", function(){
     const locationDataString = localStorage.getItem("selectedLocation");
-
     if(locationDataString){
+        // IF LOCALSTORAGE STRING EXISTS, RENDER THE PAGE CONTENT
         const location = JSON.parse(locationDataString);
         const mainContent = document.getElementById("main-content");
 
@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function(){
               <img id="location-image" src="${location.image}" alt="${location.name}">
             </div>
           </div>
-
           <div class="booking-content">
             <div class="location-header">
               <div class="location-header-items">
@@ -33,9 +32,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 <span><i class="ratingIcon fas fa-star"></i> ${location.rating}</span>  
               </div>
               <p>${location.description}</p>
-             
             </div>
-
             <div class="booking-panel">
               <p class="price">£${location.price} <span class="per-person">per person</span></p>
               <form>
@@ -79,9 +76,10 @@ document.addEventListener("DOMContentLoaded", function(){
           </div>
         </div>`;
 
-        // Dynamic price update logic
+        // INITIALISE SIDEBAR
         setupSidebarToggle();
 
+        // DYNAMIC PRICE UPDATE LOGIC
         const price = location.price;
         const attendeesSelect = document.getElementById("booking-attendees");
         const totalPriceDisplay = document.getElementById("total-price-figure");
@@ -101,20 +99,20 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("main-content").innerHTML = "<p>No booking details found!</p>";
     }
 
-
+    // BOOK BUTTON LOGIC
     const bookButton = document.querySelector(".book-button");
     bookButton.addEventListener("click", async () => {
 
-        const firstName = document.getElementById("customer-firstName").value;
-        const surname = document.getElementById("customer-surname").value;
-        const bookingDate = document.getElementById("booking-date").value;
-        const attendees = Number(document.getElementById("booking-attendees").value);
+    const firstName = document.getElementById("customer-firstName").value;
+    const surname = document.getElementById("customer-surname").value;
+    const bookingDate = document.getElementById("booking-date").value;
+    const attendees = Number(document.getElementById("booking-attendees").value);
 
-        // Get selected location from localStorage
-        const locationDataString = localStorage.getItem("selectedLocation");
-        if(!locationDataString){
+    // Get selected location from localStorage
+    const locationDataString = localStorage.getItem("selectedLocation");
+    if(!locationDataString){
             alert("No location selected");
-        }
+    }
         const location = JSON.parse(locationDataString);
 
         const newBooking = {

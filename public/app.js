@@ -38,7 +38,7 @@ function displayLocations(locationsArray){
                 <img class="location-card-image" alt="image" src="${item.image}">
                 <div class="card-content">
                   <div class="card-text-wrapper">
-                    <h3>${item.name}</h3>        
+                    <p class="card-text">${item.name}</p>        
                     <div class="card-details">
                       <p class="card-country">${item.country}</p>
                       <p class="card-description">${item.description}</p>   
