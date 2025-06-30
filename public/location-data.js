@@ -128,7 +128,7 @@ const locations = {
       "rating": 4.3,
       "year": 1939,
       "significance": "The site where the Enigma code was broken, shortening WWII by an estimated 2-4 years",
-      "details": "Bletchley Park is an English country house and estate that became the principal center of Allied code-breaking..."
+      "details": "Bletchley Park is an English country house that became the center of Allied code-breaking..."
     },
     {
       "id": 12,

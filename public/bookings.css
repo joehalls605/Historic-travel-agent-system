@@ -101,14 +101,10 @@ input::placeholder {
     flex-direction: row;
 }
 #new-booking-form input{
-    margin-right:10px;
+    margin-right:13px;
     height: 47px;
     padding:1px;
-}
-
-#new-booking-form input{
-    height: 47px;
-    padding:1px;
+    width:200px;
 }
 #new-booking-form input[placeholder]{
     padding-left:5px;
@@ -117,7 +113,8 @@ input::placeholder {
 select{
     height: 51px;
     padding:1px;
-    margin-right:10px;
+    margin-right:13px;
+    width:200px;
 }
 
 /* MOBILE */
@@ -173,7 +170,7 @@ select{
     }
     #firstNameInput, #surnameInput, #locationSelect, #countrySelect, #date, #attendeesInput {
         width:100%;
-        margin-right:0;
+        margin-right:10px;
     }
     .addBookingButton{
         width:100%;
