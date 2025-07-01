@@ -40,14 +40,14 @@ function displayLocations(locationsArray){
                   <div class="card-text-wrapper">
                     <p class="card-text">${item.name}</p>        
                     <div class="card-details">
-                      <p class="card-country">${item.country}</p>
+                      <span><i class="locationIcon fas fa-map-marker-alt"></i> ${item.country}</span>
                       <p class="card-description">${item.description}</p>   
                       <p>${item.significance}</p>
                       <p>${item.details}</p>
                     </div>
                   </div>
                   <div class="card-bottom">
-                  <p class="card-rating">Rating: ${item.rating}</p>  
+<!--                  <span class="card-rating"><i class="ratingIcon fas fa-star"></i>${item.rating}</span>  -->
                   <p class="card-price">${priceText}</p>
                   </div>
                 </div>
