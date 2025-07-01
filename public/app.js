@@ -143,7 +143,8 @@ document.addEventListener("click", function(event){
 });
 function handleBook(event){
     const card = event.target.closest(".location-card");
-    const locationName = card.querySelector("h3").textContent;
+    const locationName = card.querySelector(".card-text").textContent;
+    console.log(locationName);
     const selectedLocation = locationData.locations.find(loc => loc.name === locationName);
     if(selectedLocation){
         localStorage.setItem("selectedLocation", JSON.stringify(selectedLocation));
